@@ -10,4 +10,11 @@
   width: 100%;
   padding: 0;
   margin: 0 auto;
+}
+
+.header {
+  background-color: #2e393d;
+}
+.header_menu {
+  display: flex;
 }/*# sourceMappingURL=style.css.map */

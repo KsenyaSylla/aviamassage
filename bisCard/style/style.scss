@@ -1,4 +1,10 @@
 $maxWidth: 1366px;
+$backgroundColorDark: #2e393d;
+$backgroundColorMedium: #5f7f8a;
+$backgroundColorLight: #c7cbc2;
+$textColorDark: #060c12;
+$textColorLight: #afbfc5;
+
 
 * {
     margin: 0;
@@ -13,3 +19,10 @@ $maxWidth: 1366px;
     padding: 0;
     margin: 0 auto;
 } 
+
+.header {
+    background-color: $backgroundColorDark;
+    &_menu {
+        display: flex;
+    }
+}
