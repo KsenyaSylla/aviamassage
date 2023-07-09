@@ -113,10 +113,27 @@
                         </p>
                     </article>
                     <article class="comments__item">
-                        <h3 class="comments__name">Lorem ipsum</h3>
-                        <p class="comments__text">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur dolorem harum similique necessitatibus facere repellendus quam nemo impedit blanditiis laborum? Commodi aspernatur dicta dolore deserunt et pariatur, eveniet labore ut.
-                        </p>
+                        <div class="comments-item__right-column">
+                            <h3 class="comments-item__name ng-binding">
+                              Марина
+                              <!-- ngIf: !$ctrl.hideReportBlock -->
+                            </h3>
+                            <!-- ngIf: $ctrl.comment.rating > 0 --><span class="comments-item__rating ng-scope" ng-if="$ctrl.comment.rating > 0">
+                                        <div class="star-container ng-isolate-scope" count="$ctrl.comment.rating"><span ng-class="count>0 ? 'ion-ios-star star-gold' : 'ion-ios-star-outline star-gray'" class="ion-ios-star star-gold"></span> <span ng-class="count>1 ? 'ion-ios-star star-gold' : 'ion-ios-star-outline star-gray'" class="ion-ios-star star-gold"></span> <span ng-class="count>2 ? 'ion-ios-star star-gold' : 'ion-ios-star-outline star-gray'" class="ion-ios-star star-gold"></span> <span ng-class="count>3 ? 'ion-ios-star star-gold' : 'ion-ios-star-outline star-gray'" class="ion-ios-star star-gold"></span> <span ng-class="count>4 ? 'ion-ios-star star-gold' : 'ion-ios-star-outline star-gray'" class="ion-ios-star star-gold"></span></div>
+                                    </span><!-- end ngIf: $ctrl.comment.rating > 0 -->
+                            <span class="comments-item__date">
+                                        <y-localized-date date="$ctrl.comment.unixDate" show-year="true" class="ng-isolate-scope"><!-- ngIf: $ctrl.isUSAFormat -->
+                        <!-- ngIf: !$ctrl.isUSAFormat --><span ng-if="!$ctrl.isUSAFormat" data-locator="date" class="ng-binding ng-scope">
+                          6
+                          июля
+                        </span><!-- end ngIf: !$ctrl.isUSAFormat -->
+                        <!-- ngIf: $ctrl.showYear --><span ng-if="$ctrl.showYear" data-locator="year" class="ng-binding ng-scope">
+                          2023
+                        </span><!-- end ngIf: $ctrl.showYear -->
+                        </y-localized-date>
+                                    </span>
+                            <div class="comments-item__text ng-binding" ng-bind-html="$ctrl.comment.text | nl2brFilter | trustedHTMLFilter">Надежда невероятный мастер, я не знаю как она чувствует и умеет подобрать именно тот нажим/силу/технику, вот которая идеально подходит ❤️ Самая лучшая! )</div>
+                          </div>
                     </article>
                     <article class="comments__item">
                         <h3 class="comments__name">Lorem ipsum</h3>
