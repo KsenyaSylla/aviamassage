@@ -67,5 +67,31 @@
 }
 
 main {
-  margin-top: 10em;
+  margin-top: 5em;
+}
+main .about {
+  background-color: #2e393d;
+  color: aliceblue;
+  font-weight: bold;
+}
+
+.enroll__button {
+  position: fixed;
+  left: 43%;
+  min-width: 15em;
+  height: 5em;
+  bottom: 10em;
+  background-color: #ccb78c;
+  border: none;
+}
+.enroll__button:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: #adffc0;
+}
+.enroll__button .enroll__link {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #2e393d;
+  text-decoration: none;
 }/*# sourceMappingURL=style.css.map */

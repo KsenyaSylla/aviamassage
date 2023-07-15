@@ -32,54 +32,49 @@
     </header>
     
     <main>
-        <div class="container">
-            <section class="about">
-                <h1 class="about__header">Массажист Надежда Фамилия</h1>
+        <div class="container about">
+            <section>
+                <h1 class="about__heading">Массажист Надежда Смирнова</h1>
                 <p class="about__text">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum officiis corrupti ipsam repellat qui maxime ad laudantium. Voluptatum molestias enim quibusdam maiores sunt corrupti ipsam, a soluta eius molestiae consequuntur?
                 </p>
-                <div class="about__enroll">
-                    <button class="enroll__button">
-                        <span class="enroll__icon"></span>
-                        <span class="enroll__text"><a href="#enroll" class="enroll__link">Записаться на массаж</a></span>
-                    </button>
-                </div>
             </section>   
         </div>
         <div class="container">
-            <section class="myWorks">
+            <section class="services">
                 <div class="makeRowFrom3">
-                    <article class="myWorks__item">
-                        <div class="myWorks__video"></div>
-                        <div class="myWorks__text--block">
-                            <h3 class="myWorks__heading">Lorem ipsum</h3>
-                            <p class="myWorks__text">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates ex molestiae impedit eaque excepturi perferendis? Qui animi vel natus sit quidem, reprehenderit vitae ipsam rerum obcaecati dolore modi iste iusto.
-                            </p>
-                        </div>
-                    </article>
-                    <article class="myWorks__item">
-                        <div class="myWorks__video">
-                            <div class="myWorks__text--block">
-                                <h3 class="myWorks__heading">Lorem</h3>
-                                <p class="myWorks__text">
+                    <article class="services__item">
+                        <div class="services__video">
+                            <div class="services__text--block">
+                                <h3 class="services__heading">Lorem</h3>
+                                <p class="services__text">
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, distinctio! Modi dolor itaque earum soluta suscipit nisi nobis esse, obcaecati dolorum, debitis porro quos illo aspernatur error quibusdam! Facilis, in?
                                 </p>
                             </div>
                         </div>
                     </article>
-                    <article class="myWorks__item">
-                        <div class="myWorks__video">
-                            <div class="myWorks__text--block">
-                                <h3 class="myWorks__heading">Lorem</h3>
-                                <p class="myWorks__text">
+                    <article class="services__item">
+                        <div class="services__video">
+                            <div class="services__text--block">
+                                <h3 class="services__heading">Lorem</h3>
+                                <p class="services__text">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis, distinctio! Modi dolor itaque earum soluta suscipit nisi nobis esse, obcaecati dolorum, debitis porro quos illo aspernatur error quibusdam! Facilis, in?
+                                </p>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="services__item">
+                        <div class="services__video">
+                            <div class="services__text--block">
+                                <h3 class="services__heading">Lorem</h3>
+                                <p class="services__text">
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae, sapiente? Similique commodi quis doloribus aut at impedit ut veniam. Numquam, eaque sed. Deleniti illum magni nisi, nostrum sint eum esse!
                                 </p>
                             </div>
                         </div>
                     </article>
                 </div>
-                <button class="myWorks__showAll">
+                <button class="services__showAll">
                     <span class="showAll__icon"></span>
                     <span class="showAll__link">Показать все мои работы</span>
                 </button>
@@ -100,9 +95,8 @@
                               Марина
                               <!-- ngIf: !$ctrl.hideReportBlock -->
                             </h3>
-                            <!-- ngIf: $ctrl.comment.rating > 0 --><span class="comments-item__rating ng-scope" ng-if="$ctrl.comment.rating > 0">
-                                        <div class="star-container ng-isolate-scope" count="$ctrl.comment.rating"><span ng-class="count>0 ? 'ion-ios-star star-gold' : 'ion-ios-star-outline star-gray'" class="ion-ios-star star-gold"></span> <span ng-class="count>1 ? 'ion-ios-star star-gold' : 'ion-ios-star-outline star-gray'" class="ion-ios-star star-gold"></span> <span ng-class="count>2 ? 'ion-ios-star star-gold' : 'ion-ios-star-outline star-gray'" class="ion-ios-star star-gold"></span> <span ng-class="count>3 ? 'ion-ios-star star-gold' : 'ion-ios-star-outline star-gray'" class="ion-ios-star star-gold"></span> <span ng-class="count>4 ? 'ion-ios-star star-gold' : 'ion-ios-star-outline star-gray'" class="ion-ios-star star-gold"></span></div>
-                                    </span><!-- end ngIf: $ctrl.comment.rating > 0 -->
+                            <!-- ngIf: $ctrl.comment.rating > 0 -->
+                                        <!-- end ngIf: $ctrl.comment.rating > 0 -->
                             <span class="comments-item__date">
                                         <y-localized-date date="$ctrl.comment.unixDate" show-year="true" class="ng-isolate-scope"><!-- ngIf: $ctrl.isUSAFormat -->
                         <!-- ngIf: !$ctrl.isUSAFormat --><span ng-if="!$ctrl.isUSAFormat" data-locator="date" class="ng-binding ng-scope">
@@ -124,10 +118,6 @@
                         </p>
                     </article>
                 </div>
-                <button class="enroll__button">
-                    <span class="enroll__icon"></span>
-                    <span class="enroll__text"><a href="#enroll" class="enroll__link">Записаться на массаж</a></span>
-                </button>
             </section>
         </div>
         <div class="container">
@@ -193,5 +183,10 @@
             <div class="footer__rights"></div>   
         </div>
     </footer>
+    <!-- Кнопка для записи фиксированная-->
+        <button class="enroll__button">
+            <a href="#enroll" class="enroll__link">ЗАПИСАТЬСЯ</a>
+        </button>
+    
 </body>
 </html>

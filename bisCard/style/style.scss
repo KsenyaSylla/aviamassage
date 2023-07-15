@@ -4,12 +4,13 @@ $backgroundColorMedium: #5f7f8a;
 $backgroundColorLight: #c7cbc2;
 $textColorDark: #060c12;
 $textColorLight: aliceblue;
+$lightGreen: #adffc0;
 $commonSpacing: 5em;
 
 @mixin cursorHover {
     cursor: pointer;
     text-decoration: underline;
-    text-decoration-color: #adffc0;  
+    text-decoration-color: $lightGreen;  
 }
 
 @mixin textStyleLight {
@@ -17,6 +18,16 @@ $commonSpacing: 5em;
     font-weight: bold;
 }
 
+@mixin fixedButtonInCenter {
+    position: fixed;
+    left: 43%;
+    //right: 45%;
+}
+
+@mixin buttonSize {
+    min-width: $commonSpacing*3;
+    height: $commonSpacing;
+}
 
 * {
     margin: 0;
@@ -80,5 +91,27 @@ $commonSpacing: 5em;
     }
 }
 main {
-    margin-top: $commonSpacing*2;
+    margin-top: $commonSpacing;
+    .about {
+        background-color: $backgroundColorDark;
+        @include textStyleLight;
+    }
+}
+
+.enroll__button {
+    @include fixedButtonInCenter;
+    @include buttonSize;
+    bottom: $commonSpacing*2;
+    background-color: #ccb78c;
+    border: none;
+    &:hover {
+        @include cursorHover;
+    }
+    .enroll__link{
+        font-size: 1.5em;
+        font-weight: bold;
+        color: $backgroundColorDark;
+        text-decoration: none;
+    }
+
 }
