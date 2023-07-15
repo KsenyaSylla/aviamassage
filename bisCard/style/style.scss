@@ -3,7 +3,19 @@ $backgroundColorDark: #2e393d;
 $backgroundColorMedium: #5f7f8a;
 $backgroundColorLight: #c7cbc2;
 $textColorDark: #060c12;
-$textColorLight: #afbfc5;
+$textColorLight: aliceblue;
+$commonSpacing: 5em;
+
+@mixin cursorHover {
+    cursor: pointer;
+    text-decoration: underline;
+    text-decoration-color: #adffc0;  
+}
+
+@mixin textStyleLight {
+    color: $textColorLight;
+    font-weight: bold;
+}
 
 
 * {
@@ -22,7 +34,51 @@ $textColorLight: #afbfc5;
 
 .header {
     background-color: $backgroundColorDark;
-    &_menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    .navbar {
         display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-left: $commonSpacing;
+        padding-right: $commonSpacing;
+        height: 5em;
+        vertical-align: middle;
+        width: 100%;
+        color:#c7cbc2;
+        &__logo {
+            padding-left: $commonSpacing;
+            padding-right: $commonSpacing;
+            &:hover {
+                @include cursorHover;
+            }
+            .logo__link{
+                @include textStyleLight;
+                text-decoration: none;
+                & i{
+                    color: $textColorLight;  
+                }
+            }
+        }
+        &__list {
+            list-style-type: none;
+            width: 100%;
+            padding-left: $commonSpacing;
+            padding-right: $commonSpacing*2;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+        .list__link{
+            @include textStyleLight;
+            text-decoration: none;
+            &:hover{
+                @include cursorHover;
+            }
+        }
     }
+}
+main {
+    margin-top: $commonSpacing*2;
 }
