@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -73,6 +74,36 @@ main .about {
   background-color: #2e393d;
   color: aliceblue;
   font-weight: bold;
+}
+main .about__heading {
+  text-align: center;
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+main .about__text {
+  padding-left: 30%;
+  padding-right: 30%;
+}
+main .about section {
+  background-image: url(../img/фон.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 45em;
+}
+main .services {
+  background-color: #8d9a90;
+}
+main .services .makeRowFrom3 {
+  padding: 5em;
+  display: flex;
+  justify-content: space-between;
+}
+main .services__item {
+  background-color: #eef2e9;
+  padding: 2.5em;
+  width: 20em;
+  height: 25em;
 }
 
 .enroll__button {

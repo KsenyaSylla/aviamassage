@@ -95,6 +95,35 @@ main {
     .about {
         background-color: $backgroundColorDark;
         @include textStyleLight;
+        &__heading {
+            text-align: center;
+            padding-top: 5%;
+            padding-bottom: 5%;
+        }
+        &__text {
+            padding-left: 30%;
+            padding-right: 30%;
+        }
+        & section{
+            background-image: url(../img/фон.jpg);
+            background-size: contain;background-repeat: no-repeat;
+            background-position: center;
+            height: 45em;
+        }
+    }
+    .services {
+        background-color: #8d9a90;
+        .makeRowFrom3 {
+            padding: $commonSpacing;
+            display: flex;
+            justify-content: space-between;
+        }
+        &__item{
+            background-color: #eef2e9;
+            padding: $commonSpacing/2;
+            width: $commonSpacing*4;
+            height: $commonSpacing*5;
+        }
     }
 }
 
