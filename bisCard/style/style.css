@@ -93,6 +93,7 @@ main .about section {
 }
 main .services {
   background-color: #8d9a90;
+  padding-bottom: 5em;
 }
 main .services .makeRowFrom3 {
   padding: 5em;
@@ -104,15 +105,39 @@ main .services__item {
   padding: 2.5em;
   width: 20em;
   height: 25em;
+  box-shadow: 0px 0px 10px 4px rgba(34, 60, 80, 0.2);
+}
+main .services__showAll {
+  padding: 1em;
+  background-color: #ccb78c;
+  font-size: large;
+  border: none;
+  align-self: center;
+}
+main .services__showAll:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: #adffc0;
+}
+main .services .putInCenter {
+  display: flex;
+  flex-direction: column;
 }
 
 .enroll__button {
   position: fixed;
-  left: 43%;
+  z-index: 3;
   min-width: 15em;
   height: 5em;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 0px 13px 4px rgba(255, 255, 255, 0.3);
   bottom: 10em;
-  background-color: #ccb78c;
+  background-color: #adffc0;
   border: none;
 }
 .enroll__button:hover {
