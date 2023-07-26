@@ -127,6 +127,7 @@ main {
             padding: $commonSpacing;
             display: flex;
             justify-content: space-between;
+            flex-wrap: wrap;
         }
         &__item{
             background-color: #eef2e9;
@@ -153,11 +154,61 @@ main {
         
     }
 }
-    
+
+.footer {
+    color: #eef2e9;
+    &__contacts{
+        background-color: $backgroundColorMedium;
+        padding-top: $commonSpacing/2;
+        padding-bottom: $commonSpacing/2;
+        .contacts__list{
+            list-style-type: none; 
+        } 
+    }
+    &__social{
+        background-color: $backgroundColorDark;
+        padding-top: $commonSpacing/2;
+        padding-bottom: $commonSpacing/2;
+        .social__list{
+            list-style-type: none;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            &:hover {
+                @include cursorHover;
+            }
+        }
+    }
+    &__rights{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .authorsOfIcons{
+            display: flex;
+            list-style-type: none;
+            & a{
+                text-decoration: none;
+                color: $textColorLight;
+                &:hover {
+                    @include cursorHover;
+                }
+            }
+            &__icon:not(:last-child){
+                padding-right: $commonSpacing;
+            }
+        }
+    }
+}
+
+.wrapper{
+    display: flex;
+    justify-content: space-around; 
+}
+
 .enroll__button {
     @include fixPosition;
     @include buttonSize;
-    
+
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
