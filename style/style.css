@@ -132,6 +132,8 @@ main .services .putInCenter {
   padding-left: 5em;
   padding-right: 5em;
   padding-bottom: 2.5em;
+  display: flex;
+  flex-direction: column;
 }
 .comments__showAll {
   margin-top: 2.5em;
@@ -154,6 +156,7 @@ main .services .putInCenter {
   display: flex;
   list-style-type: none;
   justify-content: space-around;
+  padding-bottom: 2.5em;
 }
 .footer__contacts .contacts__list a {
   text-decoration: none;
