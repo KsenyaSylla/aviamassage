@@ -127,16 +127,31 @@ main .services .putInCenter {
   flex-direction: column;
 }
 
+.comments {
+  background-color: #b4bca4;
+}
 .comments__wrapper {
   padding-top: 5em;
-  padding-left: 5em;
-  padding-right: 5em;
   padding-bottom: 2.5em;
   display: flex;
   flex-direction: column;
 }
+.comments__item {
+  background-color: #dde3d7;
+  padding: 1.6666666667em;
+  margin-bottom: 1em;
+}
+.comments__item--text {
+  margin-bottom: 1em;
+}
+.comments__item--name {
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+.comments__item--date {
+  text-align: center;
+}
 .comments__showAll {
-  margin-top: 2.5em;
   padding: 1em;
   background-color: #ccb78c;
   font-size: large;

@@ -167,16 +167,30 @@ main {
     }
 }
 .comments {
+    background-color: #b4bca4;
     &__wrapper {
         padding-top: $commonSpacing;
-        padding-left: $commonSpacing;
-        padding-right: $commonSpacing;
         padding-bottom: $commonSpacing/2;
         display: flex;
         flex-direction: column;
     }
+    
+    &__item {
+        background-color: #dde3d7;
+        padding: $commonSpacing/3;
+        margin-bottom: 1em;
+        &--text{
+            margin-bottom: 1em;
+        }
+        &--name{
+            font-weight: bold;
+            margin-bottom: 1em;
+        }
+        &--date{
+            text-align: center;
+        }
+    }
     &__showAll{
-        margin-top: $commonSpacing/2;
         @include showAll;
     }
 }
