@@ -23,10 +23,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   padding-left: 5em;
   padding-right: 5em;
-  height: 5em;
-  vertical-align: middle;
+  min-height: 5em;
   width: 100%;
   color: #c7cbc2;
 }
@@ -50,11 +50,10 @@
 .header .navbar__list {
   list-style-type: none;
   width: 100%;
-  padding-left: 5em;
-  padding-right: 10em;
   display: flex;
-  justify-content: space-around;
   flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 1em;
 }
 .header .navbar .list__link {
   color: aliceblue;
@@ -98,7 +97,7 @@ main .services {
 main .services .makeRowFrom3 {
   padding: 5em;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-wrap: wrap;
 }
 main .services__item {
@@ -128,7 +127,14 @@ main .services .putInCenter {
   flex-direction: column;
 }
 
+.comments__wrapper {
+  padding-top: 5em;
+  padding-left: 5em;
+  padding-right: 5em;
+  padding-bottom: 2.5em;
+}
 .comments__showAll {
+  margin-top: 2.5em;
   padding: 1em;
   background-color: #ccb78c;
   font-size: large;

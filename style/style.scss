@@ -44,6 +44,12 @@ $commonSpacing: 5em;
     border: none;
     align-self: center;
 }
+
+@mixin fixedToCenter{
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
 * {
     margin: 0;
     padding: 0;
@@ -67,13 +73,14 @@ $commonSpacing: 5em;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        flex-wrap: wrap;
         padding-left: $commonSpacing;
         padding-right: $commonSpacing;
-        height: 5em;
-        vertical-align: middle;
+        min-height: 5em;
         width: 100%;
         color:#c7cbc2;
         &__logo {
+            
             padding-left: $commonSpacing;
             padding-right: $commonSpacing;
             &:hover {
@@ -90,11 +97,10 @@ $commonSpacing: 5em;
         &__list {
             list-style-type: none;
             width: 100%;
-            padding-left: $commonSpacing;
-            padding-right: $commonSpacing*2;
             display: flex;
-            justify-content: space-around;
             flex-wrap: wrap;
+            justify-content: space-around;
+            padding: 1em;
         }
         .list__link{
             @include textStyleLight;
@@ -133,7 +139,7 @@ main {
         .makeRowFrom3 {
             padding: $commonSpacing;
             display: flex;
-            justify-content: space-between;
+            justify-content: space-around;
             flex-wrap: wrap;
         }
         &__item{
@@ -161,7 +167,14 @@ main {
     }
 }
 .comments {
+    &__wrapper {
+        padding-top: $commonSpacing;
+        padding-left: $commonSpacing;
+        padding-right: $commonSpacing;
+        padding-bottom: $commonSpacing/2;
+    }
     &__showAll{
+        margin-top: $commonSpacing/2;
         @include showAll;
     }
 }
@@ -229,10 +242,8 @@ main {
 .enroll__button {
     @include fixPosition;
     @include buttonSize;
-
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
+    @include fixedToCenter;
+    
     display: flex;
     align-items: center;
     justify-content: center;    
