@@ -37,6 +37,13 @@ $commonSpacing: 5em;
     height: $commonSpacing;
 }
 
+@mixin showAll {
+    padding: $commonSpacing/5;
+    background-color: #ccb78c;
+    font-size: large;
+    border: none;
+    align-self: center;
+}
 * {
     margin: 0;
     padding: 0;
@@ -142,11 +149,7 @@ main {
             box-shadow: 0px 0px 10px 4px rgba(34, 60, 80, 0.2);
         }
         &__showAll {
-            padding: $commonSpacing/5;
-            background-color: #ccb78c;
-            font-size: large;
-            border: none;
-            align-self: center;
+            @include showAll;
             &:hover {
                 @include cursorHover;
             }
@@ -157,7 +160,11 @@ main {
         
     }
 }
-
+.comments {
+    &__showAll{
+        @include showAll;
+    }
+}
 .footer {
     color: #eef2e9;
     &__contacts{
@@ -165,7 +172,16 @@ main {
         padding-top: $commonSpacing/2;
         padding-bottom: $commonSpacing/2;
         .contacts__list{
-            list-style-type: none; 
+            display: flex;
+            list-style-type: none;
+            justify-content: space-around;
+            & a{
+                text-decoration: none;
+                color: $textColorLight;
+                &:hover {
+                    @include cursorHover;
+                }
+            }
         } 
     }
     &__social{
@@ -183,13 +199,11 @@ main {
         }
     }
     &__rights{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        margin: auto;
         .authorsOfIcons{
             list-style-type: none;
             display: flex;
-            align-items: space-around;
+            justify-content: space-around;
             flex-wrap: wrap;
             & a{
                 text-decoration: none;
@@ -202,12 +216,14 @@ main {
                 padding-right: $commonSpacing;
             }
         }
+        hr{
+            margin-top: $commonSpacing/2;
+            margin-bottom: $commonSpacing/2;
+        }
+        .authorOfSite {
+            text-align: center;
+        }
     }
-}
-
-.wrapper{
-    display: flex;
-    justify-content: space-around; 
 }
 
 .enroll__button {

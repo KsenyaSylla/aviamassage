@@ -88,40 +88,17 @@
             <div class="container">
                 <div class="makeRowFrom3">
                     <article class="comments__item">
-                        <h3 class="comments__name">Lorem ipsum</h3>
+                        <h3 class="comments__name">Марина</h3>
+                        <div class="comments__date">6
+                            июля 2023</div>
                         <p class="comments__text">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur dolorem harum similique necessitatibus facere repellendus quam nemo impedit blanditiis laborum? Commodi aspernatur dicta dolore deserunt et pariatur, eveniet labore ut.
-                        </p>
-                    </article>
-                    <article class="comments__item">
-                        <div class="comments-item__right-column">
-                            <h3 class="comments-item__name ng-binding">
-                              Марина
-                              <!-- ngIf: !$ctrl.hideReportBlock -->
-                            </h3>
-                            <!-- ngIf: $ctrl.comment.rating > 0 -->
-                                        <!-- end ngIf: $ctrl.comment.rating > 0 -->
-                            <span class="comments-item__date">
-                                        <y-localized-date date="$ctrl.comment.unixDate" show-year="true" class="ng-isolate-scope"><!-- ngIf: $ctrl.isUSAFormat -->
-                        <!-- ngIf: !$ctrl.isUSAFormat --><span ng-if="!$ctrl.isUSAFormat" data-locator="date" class="ng-binding ng-scope">
-                          6
-                          июля
-                        </span><!-- end ngIf: !$ctrl.isUSAFormat -->
-                        <!-- ngIf: $ctrl.showYear --><span ng-if="$ctrl.showYear" data-locator="year" class="ng-binding ng-scope">
-                          2023
-                        </span><!-- end ngIf: $ctrl.showYear -->
-                        </y-localized-date>
-                                    </span>
-                            <div class="comments-item__text ng-binding" ng-bind-html="$ctrl.comment.text | nl2brFilter | trustedHTMLFilter">Надежда невероятный мастер, я не знаю как она чувствует и умеет подобрать именно тот нажим/силу/технику, вот которая идеально подходит ❤️ Самая лучшая! )</div>
-                          </div>
-                    </article>
-                    <article class="comments__item">
-                        <h3 class="comments__name">Lorem ipsum</h3>
-                        <p class="comments__text">
-                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur dolorem harum similique necessitatibus facere repellendus quam nemo impedit blanditiis laborum? Commodi aspernatur dicta dolore deserunt et pariatur, eveniet labore ut.
+                            Надежда невероятный мастер, я не знаю как она чувствует и умеет подобрать именно тот нажим/силу/технику, вот которая идеально подходит ❤️ Самая лучшая! )
                         </p>
                     </article>
                 </div>
+                <button class="comments__showAll">
+                    <span class="showAll__link">Показать ещё отзывы</span>
+                </button>
             </div>
         </section>
         
@@ -142,10 +119,12 @@
     <footer class="footer">
         <a name="contacts"></a>
         <div class="footer__contacts">
-            <div class="container wrapper">
+            <div class="container">
                 <ul class="contacts__list">
-                    <li class="contacts__listItem"><a href=”tel:+79268394026”>Позвонить +7(926)839-40-26</a></li>
-                    <li class="contacts__listItem">шоссе Энтузиастов, 16</li>
+                    <li class="contacts__listItem">авиамоторная, 49/1</li>
+                    <li class="contacts__listItem">
+                        <a href=”tel:+79268394026”>Позвонить +7(926)839-40-26</a>
+                    </li>
                 </ul>
                 <div class="contacts__cart">
                     <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ad3c81c5b8dc568389a314447ea8cb0242bdd6c071132ffa27b87360464725486&amp;width=695&amp;height=614&amp;lang=ru_RU&amp;scroll=true"></script>
@@ -172,7 +151,10 @@
                             <a target="_blank" href="https://icons8.com/icon/16713/whatsapp">WhatsApp</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
                         </li>
                     </ul>
-                    <div class="authorOfSite">Автор сайта 	&copy; Ксения Силла <span class="year" id="year"></span></div>   
+                    <hr>
+                    <div class="authorOfSite">
+                        Автор сайта 	&copy; Ксения Силла <span class="year" id="year"></span>
+                    </div> 
                 </div>
             </div>  
         </div>

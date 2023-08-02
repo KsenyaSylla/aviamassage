@@ -128,6 +128,14 @@ main .services .putInCenter {
   flex-direction: column;
 }
 
+.comments__showAll {
+  padding: 1em;
+  background-color: #ccb78c;
+  font-size: large;
+  border: none;
+  align-self: center;
+}
+
 .footer {
   color: #eef2e9;
 }
@@ -137,7 +145,18 @@ main .services .putInCenter {
   padding-bottom: 2.5em;
 }
 .footer__contacts .contacts__list {
+  display: flex;
   list-style-type: none;
+  justify-content: space-around;
+}
+.footer__contacts .contacts__list a {
+  text-decoration: none;
+  color: aliceblue;
+}
+.footer__contacts .contacts__list a:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-color: #adffc0;
 }
 .footer__social {
   background-color: #2e393d;
@@ -156,14 +175,12 @@ main .services .putInCenter {
   text-decoration-color: #adffc0;
 }
 .footer__rights {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  margin: auto;
 }
 .footer__rights .authorsOfIcons {
   list-style-type: none;
   display: flex;
-  align-items: space-around;
+  justify-content: space-around;
   flex-wrap: wrap;
 }
 .footer__rights .authorsOfIcons a {
@@ -178,10 +195,12 @@ main .services .putInCenter {
 .footer__rights .authorsOfIcons__icon:not(:last-child) {
   padding-right: 5em;
 }
-
-.wrapper {
-  display: flex;
-  justify-content: space-around;
+.footer__rights hr {
+  margin-top: 2.5em;
+  margin-bottom: 2.5em;
+}
+.footer__rights .authorOfSite {
+  text-align: center;
 }
 
 .enroll__button {
