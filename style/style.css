@@ -28,19 +28,10 @@
   padding-right: 5em;
   color: #c7cbc2;
 }
-.header .navbar__logo {
-  padding-left: 5em;
-  padding-right: 5em;
-}
-.header .navbar__logo:hover {
-  cursor: pointer;
-  text-decoration: underline;
-  text-decoration-color: #adffc0;
-}
-.header .navbar__logo .logo__link {
-  color: aliceblue;
-  font-weight: bold;
-  text-decoration: none;
+.header .navbar__heading {
+  color: white;
+  margin-top: 2.5em;
+  text-align: center;
 }
 .header .navbar__list {
   list-style-type: none;
@@ -78,12 +69,6 @@ main .about__wrapper {
 }
 main .about__heading {
   text-align: center;
-  padding-top: 5%;
-  padding-bottom: 5%;
-}
-main .about__text {
-  padding-left: 30%;
-  padding-right: 30%;
 }
 main .about__img {
   display: flex;
@@ -93,8 +78,12 @@ main .about__img img {
   width: 100%;
 }
 main .about__info {
-  position: absolute;
-  top: 5em;
+  text-align: center;
+  padding: 5em;
+  margin: 2.5em;
+  background-color: #eef2e9;
+  box-shadow: 0px 0px 10px 4px rgba(34, 60, 80, 0.2);
+  color: #060c12;
 }
 main .services {
   background-color: #8d9a90;
@@ -238,17 +227,14 @@ main .services .putInCenter {
 .enroll__button {
   position: fixed;
   z-index: 3;
-  min-width: 15em;
-  height: 5em;
-  left: 50%;
-  margin-right: -50%;
-  transform: translate(-50%, -50%);
+  padding: 1em;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 0px 0px 13px 4px rgba(255, 255, 255, 0.3);
-  bottom: 10em;
-  background-color: #adffc0;
+  bottom: 5em;
+  right: 5em;
+  background-color: #648769;
   border: none;
 }
 .enroll__button:hover {
@@ -259,6 +245,6 @@ main .services .putInCenter {
 .enroll__button .enroll__link {
   font-size: 1.5em;
   font-weight: bold;
-  color: #2e393d;
+  color: #c7cbc2;
   text-decoration: none;
 }/*# sourceMappingURL=style.css.map */
