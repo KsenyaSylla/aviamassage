@@ -87,10 +87,17 @@ main .about__info {
 }
 main .services {
   background-color: #8d9a90;
-  padding-bottom: 5em;
+  padding-bottom: 2.5em;
+  padding-top: 2.5em;
+}
+main .services h2 {
+  color: aliceblue;
+  text-align: center;
 }
 main .services .makeRowFrom3 {
-  padding: 5em;
+  padding-left: 2.5em;
+  padding-right: 2.5em;
+  padding-top: 2.5em;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;

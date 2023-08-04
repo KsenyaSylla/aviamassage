@@ -140,9 +140,16 @@ main {
     }
     .services {
         background-color: #8d9a90;
-        padding-bottom: $commonSpacing;
+        padding-bottom: $commonSpacing/2;
+        padding-top: $commonSpacing/2;
+        & h2 {
+            color: $textColorLight;
+            text-align: center;
+        }
         .makeRowFrom3 {
-            padding: $commonSpacing;
+            padding-left: $commonSpacing/2;
+            padding-right: $commonSpacing/2;
+            padding-top: $commonSpacing/2;
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
