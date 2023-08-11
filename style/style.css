@@ -131,9 +131,16 @@ main .services .putInCenter {
 
 .comments {
   background-color: #b4bca4;
+  padding-top: 2.5em;
+  text-align: center;
 }
 .comments__wrapper {
-  padding-top: 5em;
+  padding-top: 2.5em;
+  padding-bottom: 2.5em;
+  display: flex;
+  flex-direction: column;
+}
+.comments__wrapper--forButton {
   padding-bottom: 2.5em;
   display: flex;
   flex-direction: column;
@@ -154,6 +161,7 @@ main .services .putInCenter {
 }
 .comments__item--date {
   text-align: center;
+  font-style: italic;
 }
 .comments__showAll {
   padding: 1em;
@@ -161,6 +169,8 @@ main .services .putInCenter {
   font-size: large;
   border: none;
   align-self: center;
+  display: flex;
+  justify-self: center;
 }
 
 .footer {
