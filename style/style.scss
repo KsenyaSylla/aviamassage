@@ -207,6 +207,8 @@ main {
     }
     &__showAll{
         @include showAll;
+        display: flex;
+        justify-self: center;
     }
 }
 .footer {
