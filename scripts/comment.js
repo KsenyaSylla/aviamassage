@@ -1,9 +1,11 @@
-export function comment(comments, container) {
-
+export function comment(commentsData, container, startFrom) {
+    // вытащить из commentsData по 3 комментария
+    let finish = startFrom + 3;
+    let comments = commentsData.splice(startFrom, finish);
     comments.forEach(comment => {
         const article = document.createElement("article");
         article.classList.add("comments__item");
-        container.appendChild(article); //проверить правильность места, чтобы последовательно все вставлялись по мере продвижения по массиву
+        container.appendChild(article);
 
         const heading = document.createElement("h3");
         heading.classList.add("comments__item--name");
@@ -20,4 +22,5 @@ export function comment(comments, container) {
         date.innerText = comment.date;
         article.appendChild(date);
     });
+    return finish;
 }

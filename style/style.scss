@@ -165,6 +165,11 @@ main {
             -webkit-box-shadow: 0px 0px 10px 4px rgba(34, 60, 80, 0.2);
             -moz-box-shadow: 0px 0px 10px 4px rgba(34, 60, 80, 0.2);
             box-shadow: 0px 0px 10px 4px rgba(34, 60, 80, 0.2);
+            .priseSym{
+                text-align: center;
+                padding: 1em;
+                //border: 1px, solid, #648769;
+            }
         }
         &__showAll {
             @include showAll;
@@ -203,10 +208,12 @@ main {
         margin-right: 1em;
         &--text{
             margin-bottom: 1em;
+            text-align: left;
         }
         &--name{
             font-weight: bold;
             margin-bottom: 1em;
+            text-align: left;
         }
         &--date{
             text-align: center;
@@ -219,6 +226,23 @@ main {
         justify-self: center;
     }
 }
+.contraindications {
+        background-color: $backgroundColorDark;
+        padding: $commonSpacing/2;
+        &__heading {
+            text-align: center;
+        }
+        &__info{
+            text-align: left;
+            padding: $commonSpacing/2;
+            background-color: #eef2e9;
+            box-shadow: 0px 0px 10px 4px rgba(34, 60, 80, 0.2);
+            color: $textColorDark;
+            //position: absolute;
+            //top: $commonSpacing;
+        }
+    }
+
 .footer {
     color: #eef2e9;
     &__contacts{

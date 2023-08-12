@@ -112,6 +112,10 @@ main .services__item {
   height: 25em;
   box-shadow: 0px 0px 10px 4px rgba(34, 60, 80, 0.2);
 }
+main .services__item .priseSym {
+  text-align: center;
+  padding: 1em;
+}
 main .services__showAll {
   padding: 1em;
   background-color: #ccb78c;
@@ -154,10 +158,12 @@ main .services .putInCenter {
 }
 .comments__item--text {
   margin-bottom: 1em;
+  text-align: left;
 }
 .comments__item--name {
   font-weight: bold;
   margin-bottom: 1em;
+  text-align: left;
 }
 .comments__item--date {
   text-align: center;
@@ -171,6 +177,21 @@ main .services .putInCenter {
   align-self: center;
   display: flex;
   justify-self: center;
+}
+
+.contraindications {
+  background-color: #2e393d;
+  padding: 2.5em;
+}
+.contraindications__heading {
+  text-align: center;
+}
+.contraindications__info {
+  text-align: left;
+  padding: 2.5em;
+  background-color: #eef2e9;
+  box-shadow: 0px 0px 10px 4px rgba(34, 60, 80, 0.2);
+  color: #060c12;
 }
 
 .footer {
