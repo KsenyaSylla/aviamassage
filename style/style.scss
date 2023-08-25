@@ -65,15 +65,11 @@ $commonSpacing: 5em;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        flex-wrap: wrap;
         padding: 2em;
         color:#c7cbc2;
-        &__heading {
-            color: white;
-            text-align: center;
-        }
         &__burger{
             color: $textColorLight;
+            margin-right: 2em;
             &:hover{
                 @include cursorHover;
             }
@@ -83,6 +79,10 @@ $commonSpacing: 5em;
         }
         .hide{
             display: none;
+        }
+        &__heading {
+            color: white;
+            text-align: center;
         }
         &__list {
             list-style-type: none;
@@ -249,17 +249,27 @@ main {
         background-color: $backgroundColorMedium;
         padding-top: $commonSpacing/2;
         padding-bottom: $commonSpacing/2;
+        .contacts__header{
+            text-align: center;
+            padding-bottom: 2em;
+        }
         .contacts__list{
             display: flex;
             list-style-type: none;
             justify-content: space-around;
+            flex-wrap: wrap;
             padding-bottom: $commonSpacing/2;
+            font-size: larger;
             & a{
                 text-decoration: none;
                 color: $textColorLight;
                 &:hover {
                     @include cursorHover;
                 }
+            }
+            &--item{
+                padding-left: 2em;
+                padding-right: 2em;
             }
         } 
     }
