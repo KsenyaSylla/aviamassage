@@ -66,27 +66,28 @@ $commonSpacing: 5em;
         align-items: center;
         justify-content: space-between;
         flex-wrap: wrap;
-        padding-left: $commonSpacing;
-        padding-right: $commonSpacing;
+        padding: 2em;
         color:#c7cbc2;
         &__heading {
             color: white;
-            margin-top: $commonSpacing/2;
             text-align: center;
-            //padding-left: $commonSpacing;
-            //padding-right: $commonSpacing;
-            //&:hover {
-            //    @include cursorHover;
-            //}
-            //.logo__link{
-            //    @include textStyleLight;
-            //    text-decoration: none;
-            //}
+        }
+        &__burger{
+            color: $textColorLight;
+            &:hover{
+                @include cursorHover;
+            }
+            &--icon{
+                display: block;
+            }
+        }
+        .hide{
+            display: none;
         }
         &__list {
             list-style-type: none;
             width: 100%;
-            display: flex;
+            display: none;
             flex-wrap: wrap;
             justify-content: space-around;
             padding: 1em;
@@ -305,27 +306,6 @@ main {
     }
 }
 
-.enroll__button {
-    @include fixPosition;
-    @include buttonSize;
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;    
-    -webkit-box-shadow: 0px 0px 13px 4px rgba(255, 255, 255, 0.3);
-    -moz-box-shadow: 0px 0px 13px 4px rgba(255, 255, 255, 0.3);
-    box-shadow: 0px 0px 13px 4px rgba(255, 255, 255, 0.3);
-    bottom: $commonSpacing;
-    right: $commonSpacing;
-    background-color: #648769;
-    border: none;
-    &:hover {
-        @include cursorHover;
-    }
-    .enroll__link{
-        font-size: 1.5em;
-        font-weight: bold;
-        color: $backgroundColorLight;
-        text-decoration: none;
-    }
+.yClients {
+    right: 2em;
 }
