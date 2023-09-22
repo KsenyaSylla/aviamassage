@@ -46,12 +46,18 @@
   text-align: center;
 }
 .header .navbar__list {
+  position: absolute;
+  max-width: 1366px;
+  background-color: #5f7f8a;
   list-style-type: none;
   width: 100%;
   display: none;
   flex-wrap: wrap;
   justify-content: space-around;
-  padding: 1em;
+  padding-top: 0.5em;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
 }
 .header .navbar .list__item {
   padding: 1em;

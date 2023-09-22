@@ -85,12 +85,16 @@ $commonSpacing: 5em;
             text-align: center;
         }
         &__list {
+            position: absolute;
+            max-width: $maxWidth;
+            background-color: $backgroundColorMedium;
             list-style-type: none;
             width: 100%;
             display: none;
             flex-wrap: wrap;
             justify-content: space-around;
-            padding: 1em;
+            padding-top: 0.5em;
+            @include fixedToCenter;
         }
         .list__item{
             padding: 1em;
