@@ -1,26 +1,22 @@
 export function comment(commentsData, container, startFrom) {
-    // вытащить из commentsData по 3 комментария
+    const template = document.getElementById("comment-card");
+
+    if (!template) {
+        return startFrom;
+    }
+
     const finish = startFrom + 3;
     const comments = commentsData.splice(startFrom, finish);
+
     comments.forEach((comment) => {
-        const article = document.createElement("article");
-        article.classList.add("comments__item");
-        container.appendChild(article);
+        const card = template.content.cloneNode(true);
 
-        const heading = document.createElement("h3");
-        heading.classList.add("comments__item--name");
-        heading.innerText = comment.name;
-        article.appendChild(heading);
+        card.querySelector('[data-field="name"]').textContent = comment.name;
+        card.querySelector('[data-field="text"]').textContent = comment.text;
+        card.querySelector('[data-field="date"]').textContent = comment.date;
 
-        const text = document.createElement("p");
-        text.classList.add("comments__item--text");
-        text.innerText = comment.text;
-        article.appendChild(text);
-
-        const date = document.createElement("div");
-        date.classList.add("comments__item--date");
-        date.innerText = comment.date;
-        article.appendChild(date);
+        container.appendChild(card);
     });
+
     return finish;
 }

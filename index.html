@@ -299,6 +299,24 @@
                 </div>
             </div>
         </footer>
+        <template id="service-card">
+            <article class="services__item">
+                <div class="services__text--block">
+                    <h3 class="services__heading" data-field="name"></h3>
+                    <p class="services__text" data-field="text"></p>
+                    <p class="priseSym"><span class="price" data-field="price"></span> р.</p>
+                </div>
+            </article>
+        </template>
+
+        <template id="comment-card">
+            <article class="comments__item">
+                <h3 class="comments__item--name" data-field="name"></h3>
+                <p class="comments__item--text" data-field="text"></p>
+                <div class="comments__item--date" data-field="date"></div>
+            </article>
+        </template>
+
         <script src="https://w943669.yclients.com/widgetJS" charset="UTF-8"></script>
         <script src="./scripts/index.js" type="module"></script>
     </body>
