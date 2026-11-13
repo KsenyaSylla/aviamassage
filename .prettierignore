@@ -1,0 +1,11 @@
+node_modules/
+_site/
+package-lock.json
+style/style.css
+style/style.css.map
+style/colors.css
+templates/
+comments/
+the help/
+цвета/
+__MACOSX/

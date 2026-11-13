@@ -1,6 +1,5 @@
 export function services(services, container) {
-
-    services.forEach(service => {
+    services.forEach((service) => {
         const article = document.createElement("article");
         article.classList.add("services__item");
         container.appendChild(article);

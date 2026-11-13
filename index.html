@@ -1,177 +1,286 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style/style.css">
-    <title>Авиамассаж</title>
-</head>
-<body>
-    <header class="header">
-        <div class="container">
-            <nav class="navbar">
-                <button type="button" class="navbar__burger" aria-label="Открыть меню" aria-expanded="false" aria-controls="navbar-menu">
-                    <span class="navbar__burger--icon navbar__burger--icon_open">
-                        <svg width="32" height="23" viewBox="0 0 32 23" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-                            <path d="M0 23V20.31H32V23H0ZM0 12.76V10.07H32V12.76H0ZM0 2.69V0H32V2.69H0Z" fill="#E8E8E8"/>
-                        </svg>
-                    </span>
-                    <span class="navbar__burger--icon navbar__burger--icon_close">
-                        <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-                            <path d="M1 1L22 22M22 1L1 22" stroke="#E8E8E8" stroke-width="2.69"/>
-                        </svg>
-                    </span>
-                </button>
-                <div class="navbar__heading"><h1><strong>Массажист</strong> Надежда Смирнова</h1></div>
-                <ul class="navbar__list" id="navbar-menu">
-                    <li class="list__item">
-                        <a href="#about" class="list__link">О себе</a>
-                    </li>
-                    <li class="list__item">
-                        <a href="#services" class="list__link">Услуги и цены</a>
-                    </li>
-                    <li class="list__item">
-                        <a href="#comments" class="list__link">Отзывы</a>
-                    </li>
-                    <li class="list__item">
-                        <a href="#contraindications" class="list__link">Противопоказания</a>
-                    </li>
-                    <li class="list__item">
-                        <a href="#contacts" class="list__link">Контакты</a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    
-    <main>
-        <div class="about">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style/style.css" />
+        <title>Авиамассаж</title>
+    </head>
+    <body>
+        <header class="header">
             <div class="container">
-                <section class="about__wrapper">
-                    <p class="about__img">
-                        <img src="./img/bgi1.jpeg" alt="Надежда Смирнова">
-                    </p>
-                    <div class="about__info">
-                        <a name="about"></a>
-                        <h2 class="about__heading">О себе</h2>
-                        <p class="about__text">
-                            Меня зовут Надежда Смирнова, я занимаюсь массажем с 2020 года. В эту сферу я пришла неожиданно для самой себя, была необходимость найти профессию с хорошим уровнем оплаты и свободным графиком.  Мир красоты и здоровья принял меня. Массаж - это кайф! Обожаю за собой ухаживать, и включаю его в свои коммунальные платежи)) Рекомендую посещать массаж в качестве телесноориентированной терапии как акт самолюбви и заботы о себе. Я за спокойное отношение к красоте и возрасту. Когда ты живёшь, любя себя, любя свои особенности. Красота не должна требовать, красота может быть по любви. Любите себя, приходите ко мне на массаж💚
-                        </p>
+                <nav class="navbar">
+                    <button
+                        type="button"
+                        class="navbar__burger"
+                        aria-label="Открыть меню"
+                        aria-expanded="false"
+                        aria-controls="navbar-menu"
+                    >
+                        <span class="navbar__burger--icon navbar__burger--icon_open">
+                            <svg
+                                width="32"
+                                height="23"
+                                viewBox="0 0 32 23"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                                aria-hidden="true"
+                                focusable="false"
+                            >
+                                <path
+                                    d="M0 23V20.31H32V23H0ZM0 12.76V10.07H32V12.76H0ZM0 2.69V0H32V2.69H0Z"
+                                    fill="#E8E8E8"
+                                />
+                            </svg>
+                        </span>
+                        <span class="navbar__burger--icon navbar__burger--icon_close">
+                            <svg
+                                width="23"
+                                height="23"
+                                viewBox="0 0 23 23"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                                aria-hidden="true"
+                                focusable="false"
+                            >
+                                <path
+                                    d="M1 1L22 22M22 1L1 22"
+                                    stroke="#E8E8E8"
+                                    stroke-width="2.69"
+                                />
+                            </svg>
+                        </span>
+                    </button>
+                    <div class="navbar__heading">
+                        <h1><strong>Массажист</strong> Надежда Смирнова</h1>
                     </div>
-                </section>   
-            </div>
-        </div>
-        <section class="services" name="services">
-            <a name="services"></a>
-            <h2>Услуги</h2>
-            <div class="container putInCenter">
-                <div class="makeRowFrom3">
-                    <!--здесь работает скрипт-->
-                </div>
-            <!--    <button class="services__showAll">
-                    <span class="showAll__link">Показать все мои работы</span>
-                </button>
-                -->
-            </div>
-        </section>
-        <section class="comments">
-            <a name="comments"><h2>Отзывы</h2></a>
-            <div class="container">
-                <div class="comments__wrapper">
-                    <!--здесь должен работать скрипт-->
-                    
-                </div>
-                <div class="comments__wrapper--forButton">
-                    <button class="comments__showAll" data-startFrom = "0">
-                        <span class="showAll__link">Показать ещё отзывы</span>
-                    </button>                    
-                </div>
-            </div>
-        </section>
-        <section class="contraindications">
-            <a name="contraindications"></a>
-            <div class="container">
-                <div class="contraindications__info">
-                    <h2 class="contraindications__heading">Противопоказания</h2>
-                    <p class="contraindications__text">
-                        Массаж является пассивной физической нагрузкой и имеет ряд противопоказаний: - злокачественные новообразования;
-    - психические заболевания;
-    - кровотечения или склонность к ним;
-    - гемофилия и другие болезни крови;
-    - СПИД;
-    - серьезные заболевания органов брюшной полости;
-    - гнойные процессы;
-    - склероз сосудов головного мозга;
-    - легочная или сердечная недостаточность 3 степени;
-    - остеомиелит;
-    - аневризмы сердца и аорты;
-    - тромбозы и тромбофлебиты;
-    - отек легких;
-    - печеночная и почечная недостаточность;
-    - туберкулез в активной форме;
-    - гангрена;
-    - гипертоническая болезнь 3 степени;
-    - сепсис;
-    - острая ишемия миокарда.
-    Также не рекомендуется делать массаж тела при беременности, гриппе и ОРВИ, других вирусных и бактериальных заболеваниях, сопровождающихся лихорадочным состоянием и повышенной температурой тела, сильном кашле, аллергии в стадии обострения. Также противопоказанием к этой процедуре является алкогольное и наркотическое опьянение и приём лекарств, вызывающих изменение сознания.
-                    </p>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <a name="contacts"></a>
-    <footer class="footer">
-        <div class="footer__contacts">
-            <div class="container">
-                <h3 class="contacts__header">Контакты</h3>
-                <ul class="contacts__list">
-                    <li class="contacts__list--item">
-                        Позвонить <a href="tel:+79959906915" aria-label="Позвонить по номеру +7 995 990-69-15">+7 995 990-69-15</a>
-                    </li>
-                    <li class="contacts__list--item">
-                        <a href="tel:+79268394026" aria-label="Позвонить по номеру +7 926 839-40-26">+7 926 839-40-26</a>
-                    </li>
-                    <li class="contacts__list--item">
-                        Авиамоторная, 49/1
-                    </li>
-                </ul>
-                <div class="contacts__cart">
-                    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ad3c81c5b8dc568389a314447ea8cb0242bdd6c071132ffa27b87360464725486&amp;width=100%25&amp;height=450&amp;lang=ru_RU&amp;scroll=true"></script>
-                </div>                    
-            </div>
-        </div>
-        <div class="footer__social">
-            <div class="container">
-                <ul class="social__list">
-                    <li class="social__listItem--telegram"><a href="#" class="link" aria-label="Telegram">
-                        <svg xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 48 48" width="48px" height="48px"><linearGradient id="BiF7D16UlC0RZ_VqXJHnXa" x1="9.858" x2="38.142" y1="9.858" y2="38.142" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#33bef0"/><stop offset="1" stop-color="#0a85d9"/></linearGradient><path fill="url(#BiF7D16UlC0RZ_VqXJHnXa)" d="M44,24c0,11.045-8.955,20-20,20S4,35.045,4,24S12.955,4,24,4S44,12.955,44,24z"/><path d="M10.119,23.466c8.155-3.695,17.733-7.704,19.208-8.284c3.252-1.279,4.67,0.028,4.448,2.113	c-0.273,2.555-1.567,9.99-2.363,15.317c-0.466,3.117-2.154,4.072-4.059,2.863c-1.445-0.917-6.413-4.17-7.72-5.282	c-0.891-0.758-1.512-1.608-0.88-2.474c0.185-0.253,0.658-0.763,0.921-1.017c1.319-1.278,1.141-1.553-0.454-0.412	c-0.19,0.136-1.292,0.935-1.745,1.237c-1.11,0.74-2.131,0.78-3.862,0.192c-1.416-0.481-2.776-0.852-3.634-1.223	C8.794,25.983,8.34,24.272,10.119,23.466z" opacity=".05"/><path d="M10.836,23.591c7.572-3.385,16.884-7.264,18.246-7.813c3.264-1.318,4.465-0.536,4.114,2.011	c-0.326,2.358-1.483,9.654-2.294,14.545c-0.478,2.879-1.874,3.513-3.692,2.337c-1.139-0.734-5.723-3.754-6.835-4.633	c-0.86-0.679-1.751-1.463-0.71-2.598c0.348-0.379,2.27-2.234,3.707-3.614c0.833-0.801,0.536-1.196-0.469-0.508	c-1.843,1.263-4.858,3.262-5.396,3.625c-1.025,0.69-1.988,0.856-3.664,0.329c-1.321-0.416-2.597-0.819-3.262-1.078	C9.095,25.618,9.075,24.378,10.836,23.591z" opacity=".07"/><path fill="#fff" d="M11.553,23.717c6.99-3.075,16.035-6.824,17.284-7.343c3.275-1.358,4.28-1.098,3.779,1.91	c-0.36,2.162-1.398,9.319-2.226,13.774c-0.491,2.642-1.593,2.955-3.325,1.812c-0.833-0.55-5.038-3.331-5.951-3.984	c-0.833-0.595-1.982-1.311-0.541-2.721c0.513-0.502,3.874-3.712,6.493-6.21c0.343-0.328-0.088-0.867-0.484-0.604	c-3.53,2.341-8.424,5.59-9.047,6.013c-0.941,0.639-1.845,0.932-3.467,0.466c-1.226-0.352-2.423-0.772-2.889-0.932	C9.384,25.282,9.81,24.484,11.553,23.717z"/></svg>
-                    </a>
-                    </li>
-                    <li class="social__listItem--vk"><a href="#" class="link" aria-label="ВКонтакте">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48px" height="48px" aria-hidden="true" focusable="false"><path fill="#1976d2" d="M24 4A20 20 0 1 0 24 44A20 20 0 1 0 24 4Z"/><path fill="#fff" d="M35.937,18.041c0.046-0.151,0.068-0.291,0.062-0.416C35.984,17.263,35.735,17,35.149,17h-2.618 c-0.661,0-0.966,0.4-1.144,0.801c0,0-1.632,3.359-3.513,5.574c-0.61,0.641-0.92,0.625-1.25,0.625C26.447,24,26,23.786,26,23.199 v-5.185C26,17.32,25.827,17,25.268,17h-4.649C20.212,17,20,17.32,20,17.641c0,0.667,0.898,0.827,1,2.696v3.623 C21,24.84,20.847,25,20.517,25c-0.89,0-2.642-3-3.815-6.932C16.448,17.294,16.194,17,15.533,17h-2.643 C12.127,17,12,17.374,12,17.774c0,0.721,0.6,4.619,3.875,9.101C18.25,30.125,21.379,32,24.149,32c1.678,0,1.85-0.427,1.85-1.094 v-2.972C26,27.133,26.183,27,26.717,27c0.381,0,1.158,0.25,2.658,2c1.73,2.018,2.044,3,3.036,3h2.618 c0.608,0,0.957-0.255,0.971-0.75c0.003-0.126-0.015-0.267-0.056-0.424c-0.194-0.576-1.084-1.984-2.194-3.326 c-0.615-0.743-1.222-1.479-1.501-1.879C32.062,25.36,31.991,25.176,32,25c0.009-0.185,0.105-0.361,0.249-0.607 C32.223,24.393,35.607,19.642,35.937,18.041z"/></svg>
-                    </a>
-                    </li>
-                </ul>           
-                <div class="footer__rights">
-                    <ul class="authorsOfIcons">
-                        <li>
-                            <a target="_blank" rel="noopener" href="https://icons8.com/icon/oWiuH0jFiU0R/telegram-app">Telegram</a> icon by <a target="_blank" rel="noopener" href="https://icons8.com">Icons8</a>
+                    <ul class="navbar__list" id="navbar-menu">
+                        <li class="list__item">
+                            <a href="#about" class="list__link">О себе</a>
                         </li>
-                        <li class="authorsOfIcons__icon">
-                            <a target="_blank" rel="noopener" href="https://icons8.com/icon/13913/vk">VK</a> icon by <a target="_blank" rel="noopener" href="https://icons8.com">Icons8</a>
+                        <li class="list__item">
+                            <a href="#services" class="list__link">Услуги и цены</a>
+                        </li>
+                        <li class="list__item">
+                            <a href="#comments" class="list__link">Отзывы</a>
+                        </li>
+                        <li class="list__item">
+                            <a href="#contraindications" class="list__link">Противопоказания</a>
+                        </li>
+                        <li class="list__item">
+                            <a href="#contacts" class="list__link">Контакты</a>
                         </li>
                     </ul>
-                    <hr>
-                    <div class="authorOfSite">
-                        Автор сайта 	&copy; Ксения Силла <span class="year" id="year"></span>
-                    </div> 
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <div class="about" id="about">
+                <div class="container">
+                    <section class="about__wrapper">
+                        <p class="about__img">
+                            <img src="./img/bgi1.jpeg" alt="Надежда Смирнова" />
+                        </p>
+                        <div class="about__info">
+                            <h2 class="about__heading">О себе</h2>
+                            <p class="about__text">
+                                Меня зовут Надежда Смирнова, я занимаюсь массажем с 2020 года. В эту
+                                сферу я пришла неожиданно для самой себя, была необходимость найти
+                                профессию с хорошим уровнем оплаты и свободным графиком. Мир красоты
+                                и здоровья принял меня. Массаж - это кайф! Обожаю за собой
+                                ухаживать, и включаю его в свои коммунальные платежи)) Рекомендую
+                                посещать массаж в качестве телесноориентированной терапии как акт
+                                самолюбви и заботы о себе. Я за спокойное отношение к красоте и
+                                возрасту. Когда ты живёшь, любя себя, любя свои особенности. Красота
+                                не должна требовать, красота может быть по любви. Любите себя,
+                                приходите ко мне на массаж💚
+                            </p>
+                        </div>
+                    </section>
                 </div>
-            </div>  
-        </div>
-    </footer>
-    <script type="text/javascript" src="https://w943669.yclients.com/widgetJS" charset="UTF-8"></script>
-    <script src="./scripts/index.js" type="module"></script>  
-</body>
+            </div>
+            <section class="services" id="services">
+                <h2>Услуги</h2>
+                <div class="container putInCenter">
+                    <div class="makeRowFrom3">
+                        <!--здесь работает скрипт-->
+                    </div>
+                    <!--    <button class="services__showAll">
+                    <span class="showAll__link">Показать все мои работы</span>
+                </button>
+                --></div>
+            </section>
+            <section class="comments" id="comments">
+                <h2>Отзывы</h2>
+                <div class="container">
+                    <div class="comments__wrapper">
+                        <!--здесь должен работать скрипт-->
+                    </div>
+                    <div class="comments__wrapper--forButton">
+                        <button type="button" class="comments__showAll" data-start-from="0">
+                            <span class="showAll__link">Показать ещё отзывы</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <section class="contraindications" id="contraindications">
+                <div class="container">
+                    <div class="contraindications__info">
+                        <h2 class="contraindications__heading">Противопоказания</h2>
+                        <p class="contraindications__text">
+                            Массаж является пассивной физической нагрузкой и имеет ряд
+                            противопоказаний: - злокачественные новообразования; - психические
+                            заболевания; - кровотечения или склонность к ним; - гемофилия и другие
+                            болезни крови; - СПИД; - серьезные заболевания органов брюшной полости;
+                            - гнойные процессы; - склероз сосудов головного мозга; - легочная или
+                            сердечная недостаточность 3 степени; - остеомиелит; - аневризмы сердца и
+                            аорты; - тромбозы и тромбофлебиты; - отек легких; - печеночная и
+                            почечная недостаточность; - туберкулез в активной форме; - гангрена; -
+                            гипертоническая болезнь 3 степени; - сепсис; - острая ишемия миокарда.
+                            Также не рекомендуется делать массаж тела при беременности, гриппе и
+                            ОРВИ, других вирусных и бактериальных заболеваниях, сопровождающихся
+                            лихорадочным состоянием и повышенной температурой тела, сильном кашле,
+                            аллергии в стадии обострения. Также противопоказанием к этой процедуре
+                            является алкогольное и наркотическое опьянение и приём лекарств,
+                            вызывающих изменение сознания.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="footer" id="contacts">
+            <div class="footer__contacts">
+                <div class="container">
+                    <h3 class="contacts__header">Контакты</h3>
+                    <ul class="contacts__list">
+                        <li class="contacts__list--item">
+                            Позвонить
+                            <a
+                                href="tel:+79959906915"
+                                aria-label="Позвонить по номеру +7 995 990-69-15"
+                                >+7&nbsp;995&nbsp;990&#8209;69&#8209;15</a
+                            >
+                        </li>
+                        <li class="contacts__list--item">
+                            <a
+                                href="tel:+79268394026"
+                                aria-label="Позвонить по номеру +7 926 839-40-26"
+                                >+7&nbsp;926&nbsp;839&#8209;40&#8209;26</a
+                            >
+                        </li>
+                        <li class="contacts__list--item">Авиамоторная, 49/1</li>
+                    </ul>
+                    <div class="contacts__cart">
+                        <script
+                            charset="utf-8"
+                            async
+                            src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ad3c81c5b8dc568389a314447ea8cb0242bdd6c071132ffa27b87360464725486&amp;width=100%25&amp;height=450&amp;lang=ru_RU&amp;scroll=true"
+                        ></script>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__social">
+                <div class="container">
+                    <ul class="social__list">
+                        <li class="social__listItem--telegram">
+                            <a href="#" class="link" aria-label="Telegram">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 48 48"
+                                    width="48px"
+                                    height="48px"
+                                >
+                                    <linearGradient
+                                        id="BiF7D16UlC0RZ_VqXJHnXa"
+                                        x1="9.858"
+                                        x2="38.142"
+                                        y1="9.858"
+                                        y2="38.142"
+                                        gradientUnits="userSpaceOnUse"
+                                    >
+                                        <stop offset="0" stop-color="#33bef0" />
+                                        <stop offset="1" stop-color="#0a85d9" />
+                                    </linearGradient>
+                                    <path
+                                        fill="url(#BiF7D16UlC0RZ_VqXJHnXa)"
+                                        d="M44,24c0,11.045-8.955,20-20,20S4,35.045,4,24S12.955,4,24,4S44,12.955,44,24z"
+                                    />
+                                    <path
+                                        d="M10.119,23.466c8.155-3.695,17.733-7.704,19.208-8.284c3.252-1.279,4.67,0.028,4.448,2.113	c-0.273,2.555-1.567,9.99-2.363,15.317c-0.466,3.117-2.154,4.072-4.059,2.863c-1.445-0.917-6.413-4.17-7.72-5.282	c-0.891-0.758-1.512-1.608-0.88-2.474c0.185-0.253,0.658-0.763,0.921-1.017c1.319-1.278,1.141-1.553-0.454-0.412	c-0.19,0.136-1.292,0.935-1.745,1.237c-1.11,0.74-2.131,0.78-3.862,0.192c-1.416-0.481-2.776-0.852-3.634-1.223	C8.794,25.983,8.34,24.272,10.119,23.466z"
+                                        opacity=".05"
+                                    />
+                                    <path
+                                        d="M10.836,23.591c7.572-3.385,16.884-7.264,18.246-7.813c3.264-1.318,4.465-0.536,4.114,2.011	c-0.326,2.358-1.483,9.654-2.294,14.545c-0.478,2.879-1.874,3.513-3.692,2.337c-1.139-0.734-5.723-3.754-6.835-4.633	c-0.86-0.679-1.751-1.463-0.71-2.598c0.348-0.379,2.27-2.234,3.707-3.614c0.833-0.801,0.536-1.196-0.469-0.508	c-1.843,1.263-4.858,3.262-5.396,3.625c-1.025,0.69-1.988,0.856-3.664,0.329c-1.321-0.416-2.597-0.819-3.262-1.078	C9.095,25.618,9.075,24.378,10.836,23.591z"
+                                        opacity=".07"
+                                    />
+                                    <path
+                                        fill="#fff"
+                                        d="M11.553,23.717c6.99-3.075,16.035-6.824,17.284-7.343c3.275-1.358,4.28-1.098,3.779,1.91	c-0.36,2.162-1.398,9.319-2.226,13.774c-0.491,2.642-1.593,2.955-3.325,1.812c-0.833-0.55-5.038-3.331-5.951-3.984	c-0.833-0.595-1.982-1.311-0.541-2.721c0.513-0.502,3.874-3.712,6.493-6.21c0.343-0.328-0.088-0.867-0.484-0.604	c-3.53,2.341-8.424,5.59-9.047,6.013c-0.941,0.639-1.845,0.932-3.467,0.466c-1.226-0.352-2.423-0.772-2.889-0.932	C9.384,25.282,9.81,24.484,11.553,23.717z"
+                                    />
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="social__listItem--vk">
+                            <a href="#" class="link" aria-label="ВКонтакте">
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    viewBox="0 0 48 48"
+                                    width="48px"
+                                    height="48px"
+                                    aria-hidden="true"
+                                    focusable="false"
+                                >
+                                    <path
+                                        fill="#1976d2"
+                                        d="M24 4A20 20 0 1 0 24 44A20 20 0 1 0 24 4Z"
+                                    />
+                                    <path
+                                        fill="#fff"
+                                        d="M35.937,18.041c0.046-0.151,0.068-0.291,0.062-0.416C35.984,17.263,35.735,17,35.149,17h-2.618 c-0.661,0-0.966,0.4-1.144,0.801c0,0-1.632,3.359-3.513,5.574c-0.61,0.641-0.92,0.625-1.25,0.625C26.447,24,26,23.786,26,23.199 v-5.185C26,17.32,25.827,17,25.268,17h-4.649C20.212,17,20,17.32,20,17.641c0,0.667,0.898,0.827,1,2.696v3.623 C21,24.84,20.847,25,20.517,25c-0.89,0-2.642-3-3.815-6.932C16.448,17.294,16.194,17,15.533,17h-2.643 C12.127,17,12,17.374,12,17.774c0,0.721,0.6,4.619,3.875,9.101C18.25,30.125,21.379,32,24.149,32c1.678,0,1.85-0.427,1.85-1.094 v-2.972C26,27.133,26.183,27,26.717,27c0.381,0,1.158,0.25,2.658,2c1.73,2.018,2.044,3,3.036,3h2.618 c0.608,0,0.957-0.255,0.971-0.75c0.003-0.126-0.015-0.267-0.056-0.424c-0.194-0.576-1.084-1.984-2.194-3.326 c-0.615-0.743-1.222-1.479-1.501-1.879C32.062,25.36,31.991,25.176,32,25c0.009-0.185,0.105-0.361,0.249-0.607 C32.223,24.393,35.607,19.642,35.937,18.041z"
+                                    />
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="footer__rights">
+                        <ul class="authorsOfIcons">
+                            <li>
+                                <a
+                                    target="_blank"
+                                    rel="noopener"
+                                    href="https://icons8.com/icon/oWiuH0jFiU0R/telegram-app"
+                                    >Telegram</a
+                                >
+                                icon by
+                                <a target="_blank" rel="noopener" href="https://icons8.com"
+                                    >Icons8</a
+                                >
+                            </li>
+                            <li class="authorsOfIcons__icon">
+                                <a
+                                    target="_blank"
+                                    rel="noopener"
+                                    href="https://icons8.com/icon/13913/vk"
+                                    >VK</a
+                                >
+                                icon by
+                                <a target="_blank" rel="noopener" href="https://icons8.com"
+                                    >Icons8</a
+                                >
+                            </li>
+                        </ul>
+                        <hr />
+                        <div class="authorOfSite">
+                            Автор сайта &copy; Ксения Силла <span class="year" id="year"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="https://w943669.yclients.com/widgetJS" charset="UTF-8"></script>
+        <script src="./scripts/index.js" type="module"></script>
+    </body>
 </html>

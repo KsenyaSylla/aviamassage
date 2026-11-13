@@ -1,39 +1,39 @@
 @use "sass:math";
 
-$maxWidth: 1366px;
+$max-width: 1366px;
 
-$backgroundColorDark: #2e393d;
-$backgroundColorMedium: #5f7f8a;
-$backgroundColorLight: #c7cbc2;
-$backgroundColorSand: #ccb78c;
-$backgroundColorCard: #eef2e9;
-$backgroundColorServices: #8d9a90;
-$backgroundColorComments: #b4bca4;
-$backgroundColorCommentItem: #dde3d7;
-$textColorDark: #060c12;
-$textColorLight: aliceblue;
-$textColorWhite: #fff;
-$lightGreen: #adffc0;
-$shadowColor: rgba(34, 60, 80, 0.2);
-$commonSpacing: 5em;
-$commonSpacingHalf: math.div($commonSpacing, 2);
-$commonSpacingThird: math.div($commonSpacing, 3);
-$commonSpacingFifth: math.div($commonSpacing, 5);
+$background-color-dark: #2e393d;
+$background-color-medium: #5f7f8a;
+$background-color-light: #c7cbc2;
+$background-color-sand: #ccb78c;
+$background-color-card: #eef2e9;
+$background-color-services: #8d9a90;
+$background-color-comments: #b4bca4;
+$background-color-comment-item: #dde3d7;
+$text-color-dark: #060c12;
+$text-color-light: aliceblue;
+$text-color-white: #fff;
+$light-green: #adffc0;
+$shadow-color: rgb(34 60 80 / 20%);
+$common-spacing: 5em;
+$common-spacing-half: math.div($common-spacing, 2);
+$common-spacing-third: math.div($common-spacing, 3);
+$common-spacing-fifth: math.div($common-spacing, 5);
 
-@mixin cursorHover {
+@mixin cursor-hover {
     cursor: pointer;
     text-decoration: underline;
-    text-decoration-color: $lightGreen;
+    text-decoration-color: $light-green;
 }
 
-@mixin textStyleLight {
-    color: $textColorLight;
+@mixin text-style-light {
+    color: $text-color-light;
     font-weight: bold;
 }
 
-@mixin showAll {
-    padding: $commonSpacingFifth;
-    background-color: $backgroundColorSand;
+@mixin show-all {
+    padding: $common-spacing-fifth;
+    background-color: $background-color-sand;
     font-size: large;
     border: none;
     align-self: center;
@@ -47,14 +47,14 @@ $commonSpacingFifth: math.div($commonSpacing, 5);
 }
 
 .container {
-    max-width: $maxWidth;
+    max-width: $max-width;
     width: 100%;
     padding: 0;
     margin: 0 auto;
 }
 
 .header {
-    background-color: $backgroundColorDark;
+    background-color: $background-color-dark;
     position: sticky;
     top: 0;
     width: 100%;
@@ -66,7 +66,7 @@ $commonSpacingFifth: math.div($commonSpacing, 5);
         align-items: center;
         justify-content: space-between;
         padding: 2em;
-        color: $backgroundColorLight;
+        color: $background-color-light;
 
         &__burger {
             display: flex;
@@ -78,11 +78,11 @@ $commonSpacingFifth: math.div($commonSpacing, 5);
             padding: 0;
             background: none;
             border: none;
-            color: $textColorLight;
+            color: $text-color-light;
             cursor: pointer;
 
             &:focus-visible {
-                outline: 2px solid $lightGreen;
+                outline: 2px solid $light-green;
                 outline-offset: 4px;
             }
 
@@ -108,7 +108,7 @@ $commonSpacingFifth: math.div($commonSpacing, 5);
 
         &__heading {
             flex: 1;
-            color: $textColorWhite;
+            color: $text-color-white;
             text-align: center;
         }
 
@@ -118,7 +118,7 @@ $commonSpacingFifth: math.div($commonSpacing, 5);
             left: 0;
             z-index: 4;
             width: 100%;
-            background-color: $backgroundColorMedium;
+            background-color: $background-color-medium;
             list-style-type: none;
             display: none;
             flex-wrap: wrap;
@@ -135,22 +135,24 @@ $commonSpacingFifth: math.div($commonSpacing, 5);
         }
 
         .list__link {
-            @include textStyleLight;
+            @include text-style-light;
+
             text-decoration: none;
 
             &:hover {
-                @include cursorHover;
+                @include cursor-hover;
             }
         }
     }
 }
 
 main {
-    background-color: $backgroundColorDark;
+    background-color: $background-color-dark;
 
     .about {
-        background-color: $backgroundColorDark;
-        @include textStyleLight;
+        background-color: $background-color-dark;
+
+        @include text-style-light;
 
         &__wrapper {
             position: relative;
@@ -176,42 +178,42 @@ main {
 
         &__info {
             text-align: center;
-            padding: $commonSpacingHalf;
-            margin: $commonSpacingHalf;
-            background-color: $backgroundColorCard;
-            box-shadow: 0 0 10px 4px $shadowColor;
-            color: $textColorDark;
+            padding: $common-spacing-half;
+            margin: $common-spacing-half;
+            background-color: $background-color-card;
+            box-shadow: 0 0 10px 4px $shadow-color;
+            color: $text-color-dark;
         }
     }
 
     .services {
-        background-color: $backgroundColorServices;
-        padding-bottom: $commonSpacingHalf;
-        padding-top: $commonSpacingHalf;
+        background-color: $background-color-services;
+        padding-bottom: $common-spacing-half;
+        padding-top: $common-spacing-half;
 
         & h2 {
-            color: $textColorLight;
+            color: $text-color-light;
             text-align: center;
         }
 
         .makeRowFrom3 {
-            padding-left: $commonSpacingHalf;
-            padding-right: $commonSpacingHalf;
-            padding-top: $commonSpacingHalf;
+            padding-left: $common-spacing-half;
+            padding-right: $common-spacing-half;
+            padding-top: $common-spacing-half;
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
         }
 
         &__item {
-            background-color: $backgroundColorCard;
-            padding-left: $commonSpacingHalf;
-            padding-right: $commonSpacingHalf;
-            padding-top: $commonSpacingHalf;
-            margin-bottom: $commonSpacingHalf;
-            width: $commonSpacing*4;
-            height: $commonSpacing*5;
-            box-shadow: 0 0 10px 4px $shadowColor;
+            background-color: $background-color-card;
+            padding-left: $common-spacing-half;
+            padding-right: $common-spacing-half;
+            padding-top: $common-spacing-half;
+            margin-bottom: $common-spacing-half;
+            width: $common-spacing * 4;
+            height: $common-spacing * 5;
+            box-shadow: 0 0 10px 4px $shadow-color;
 
             .priseSym {
                 text-align: center;
@@ -227,26 +229,26 @@ main {
 }
 
 .comments {
-    background-color: $backgroundColorComments;
-    padding-top: $commonSpacingHalf;
+    background-color: $background-color-comments;
+    padding-top: $common-spacing-half;
     text-align: center;
 
     &__wrapper {
-        padding-top: $commonSpacingHalf;
-        padding-bottom: $commonSpacingHalf;
+        padding-top: $common-spacing-half;
+        padding-bottom: $common-spacing-half;
         display: flex;
         flex-direction: column;
     }
 
     &__wrapper--forButton {
-        padding-bottom: $commonSpacingHalf;
+        padding-bottom: $common-spacing-half;
         display: flex;
         flex-direction: column;
     }
 
     &__item {
-        background-color: $backgroundColorCommentItem;
-        padding: $commonSpacingThird;
+        background-color: $background-color-comment-item;
+        padding: $common-spacing-third;
         margin-bottom: 1em;
         margin-left: 1em;
         margin-right: 1em;
@@ -268,16 +270,17 @@ main {
         }
     }
 
-    &__showAll {
-        @include showAll;
+    &__show-all {
+        @include show-all;
+
         display: flex;
         justify-self: center;
     }
 }
 
 .contraindications {
-    background-color: $backgroundColorDark;
-    padding: $commonSpacingHalf;
+    background-color: $background-color-dark;
+    padding: $common-spacing-half;
 
     &__heading {
         text-align: center;
@@ -285,20 +288,20 @@ main {
 
     &__info {
         text-align: left;
-        padding: $commonSpacingHalf;
-        background-color: $backgroundColorCard;
-        box-shadow: 0 0 10px 4px $shadowColor;
-        color: $textColorDark;
+        padding: $common-spacing-half;
+        background-color: $background-color-card;
+        box-shadow: 0 0 10px 4px $shadow-color;
+        color: $text-color-dark;
     }
 }
 
 .footer {
-    color: $backgroundColorCard;
+    color: $background-color-card;
 
     &__contacts {
-        background-color: $backgroundColorMedium;
-        padding-top: $commonSpacingHalf;
-        padding-bottom: $commonSpacingHalf;
+        background-color: $background-color-medium;
+        padding-top: $common-spacing-half;
+        padding-bottom: $common-spacing-half;
 
         .contacts__header {
             text-align: center;
@@ -310,15 +313,15 @@ main {
             list-style-type: none;
             justify-content: space-around;
             flex-wrap: wrap;
-            padding-bottom: $commonSpacingHalf;
+            padding-bottom: $common-spacing-half;
             font-size: larger;
 
             & a {
                 text-decoration: none;
-                color: $textColorLight;
+                color: $text-color-light;
 
                 &:hover {
-                    @include cursorHover;
+                    @include cursor-hover;
                 }
             }
 
@@ -330,9 +333,9 @@ main {
     }
 
     &__social {
-        background-color: $backgroundColorDark;
-        padding-top: $commonSpacingHalf;
-        padding-bottom: $commonSpacingHalf;
+        background-color: $background-color-dark;
+        padding-top: $common-spacing-half;
+        padding-bottom: $common-spacing-half;
 
         .social__list {
             list-style-type: none;
@@ -341,7 +344,7 @@ main {
             flex-wrap: wrap;
 
             &:hover {
-                @include cursorHover;
+                @include cursor-hover;
             }
         }
     }
@@ -357,21 +360,21 @@ main {
 
             & a {
                 text-decoration: none;
-                color: $textColorLight;
+                color: $text-color-light;
 
                 &:hover {
-                    @include cursorHover;
+                    @include cursor-hover;
                 }
             }
 
             &__icon:not(:last-child) {
-                padding-right: $commonSpacing;
+                padding-right: $common-spacing;
             }
         }
 
         hr {
-            margin-top: $commonSpacingHalf;
-            margin-bottom: $commonSpacingHalf;
+            margin-top: $common-spacing-half;
+            margin-bottom: $common-spacing-half;
         }
 
         .authorOfSite {

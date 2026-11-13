@@ -1,17 +1,35 @@
 {
-    "name": "aviamassage",
-    "version": "1.0.0",
-    "private": true,
-    "description": "Сайт массажиста Надежды Смирновой",
-    "scripts": {
-        "dev": "concurrently --kill-others --names sass,browser-sync \"npm:serve\" \"npm:sass:watch\"",
-        "sass:build": "sass style/style.scss style/style.css",
-        "sass:watch": "sass --watch style/style.scss style/style.css",
-        "serve": "browser-sync start --server --files \"index.html, style/style.css, scripts/*.js, data/*.js\""
-    },
-    "devDependencies": {
-        "browser-sync": "^3.0.4",
-        "concurrently": "^9.2.1",
-        "sass": "^1.94.0"
-    }
+  "name": "aviamassage",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Сайт массажиста Надежды Смирновой",
+  "scripts": {
+    "dev": "concurrently --kill-others --names sass,browser-sync \"npm:serve\" \"npm:sass:watch\"",
+    "sass:build": "sass style/style.scss style/style.css",
+    "sass:watch": "sass --watch style/style.scss style/style.css",
+    "serve": "browser-sync start --server --files \"index.html, style/style.css, scripts/*.js, data/*.js\"",
+    "lint:js": "eslint scripts data",
+    "lint:css": "stylelint \"style/**/*.scss\"",
+    "lint:html": "html-validate index.html",
+    "lint": "npm run lint:js && npm run lint:css && npm run lint:html",
+    "format:check": "prettier --check .",
+    "audit": "npm audit --audit-level=high",
+    "check:css": "npm run sass:build && git diff --exit-code -- style/style.css style/style.css.map",
+    "build:site": "rm -rf _site && mkdir -p _site && cp index.html _site/ && cp -r style scripts data img _site/"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "browser-sync": "^3.0.4",
+    "concurrently": "^9.2.1",
+    "eslint": "^10.15.0",
+    "eslint-plugin-no-unsanitized": "^4.1.5",
+    "eslint-plugin-security": "^4.2.1",
+    "globals": "^17.14.0",
+    "html-validate": "^11.21.1",
+    "prettier": "^3.10.1",
+    "sass": "^1.94.0",
+    "stylelint": "^18.0.0",
+    "stylelint-config-standard-scss": "^18.0.0"
+  }
 }

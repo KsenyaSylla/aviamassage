@@ -197,7 +197,7 @@ main .services .putInCenter {
   text-align: center;
   font-style: italic;
 }
-.comments__showAll {
+.comments__show-all {
   padding: 1em;
   background-color: #ccb78c;
   font-size: large;

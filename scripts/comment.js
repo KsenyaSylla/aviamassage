@@ -1,8 +1,8 @@
 export function comment(commentsData, container, startFrom) {
     // вытащить из commentsData по 3 комментария
-    let finish = startFrom + 3;
-    let comments = commentsData.splice(startFrom, finish);
-    comments.forEach(comment => {
+    const finish = startFrom + 3;
+    const comments = commentsData.splice(startFrom, finish);
+    comments.forEach((comment) => {
         const article = document.createElement("article");
         article.classList.add("comments__item");
         container.appendChild(article);
