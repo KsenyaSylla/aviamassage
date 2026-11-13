@@ -8,7 +8,7 @@ export function services(services, container) {
     const fragment = document.createDocumentFragment();
 
     services.forEach((service) => {
-        const card = template.content.cloneNode(true);
+        const card = document.importNode(template.content, true);
 
         card.querySelector('[data-field="name"]').textContent = service.name;
         card.querySelector('[data-field="text"]').textContent = service.text;

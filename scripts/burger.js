@@ -30,7 +30,8 @@ export function burger() {
 
     list.addEventListener("click", (event) => {
         if (event.target.closest("a")) {
-            setOpen(false, "button");
+            setOpen(false);
+            requestAnimationFrame(() => button.focus({ preventScroll: true }));
         }
     });
 

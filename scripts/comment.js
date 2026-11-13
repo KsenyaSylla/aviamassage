@@ -8,7 +8,7 @@ export function comment(commentsData, container, shownCount) {
     const fragment = document.createDocumentFragment();
 
     commentsData.slice(0, shownCount).forEach((comment) => {
-        const card = template.content.cloneNode(true);
+        const card = document.importNode(template.content, true);
 
         card.querySelector('[data-field="name"]').textContent = comment.name;
         card.querySelector('[data-field="text"]').textContent = comment.text;
