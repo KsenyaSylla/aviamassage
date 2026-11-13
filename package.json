@@ -1,0 +1,17 @@
+{
+    "name": "aviamassage",
+    "version": "1.0.0",
+    "private": true,
+    "description": "Сайт массажиста Надежды Смирновой",
+    "scripts": {
+        "dev": "concurrently --kill-others --names sass,browser-sync \"npm:serve\" \"npm:sass:watch\"",
+        "sass:build": "sass style/style.scss style/style.css",
+        "sass:watch": "sass --watch style/style.scss style/style.css",
+        "serve": "browser-sync start --server --files \"index.html, style/style.css, scripts/*.js, data/*.js\""
+    },
+    "devDependencies": {
+        "browser-sync": "^3.0.4",
+        "concurrently": "^9.2.1",
+        "sass": "^1.94.0"
+    }
+}

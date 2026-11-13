@@ -59,7 +59,7 @@
 }
 .header .navbar__heading {
   flex: 1;
-  color: white;
+  color: #fff;
   text-align: center;
 }
 .header .navbar__list {
@@ -122,7 +122,7 @@ main .about__info {
   padding: 2.5em;
   margin: 2.5em;
   background-color: #eef2e9;
-  box-shadow: 0px 0px 10px 4px rgba(34, 60, 80, 0.2);
+  box-shadow: 0 0 10px 4px rgba(34, 60, 80, 0.2);
   color: #060c12;
 }
 main .services {
@@ -150,23 +150,11 @@ main .services__item {
   margin-bottom: 2.5em;
   width: 20em;
   height: 25em;
-  box-shadow: 0px 0px 10px 4px rgba(34, 60, 80, 0.2);
+  box-shadow: 0 0 10px 4px rgba(34, 60, 80, 0.2);
 }
 main .services__item .priseSym {
   text-align: center;
   padding: 1em;
-}
-main .services__showAll {
-  padding: 1em;
-  background-color: #ccb78c;
-  font-size: large;
-  border: none;
-  align-self: center;
-}
-main .services__showAll:hover {
-  cursor: pointer;
-  text-decoration: underline;
-  text-decoration-color: #adffc0;
 }
 main .services .putInCenter {
   display: flex;
@@ -230,7 +218,7 @@ main .services .putInCenter {
   text-align: left;
   padding: 2.5em;
   background-color: #eef2e9;
-  box-shadow: 0px 0px 10px 4px rgba(34, 60, 80, 0.2);
+  box-shadow: 0 0 10px 4px rgba(34, 60, 80, 0.2);
   color: #060c12;
 }
 
@@ -310,4 +298,6 @@ main .services .putInCenter {
 }
 .footer__rights .authorOfSite {
   text-align: center;
-}/*# sourceMappingURL=style.css.map */
+}
+
+/*# sourceMappingURL=style.css.map */

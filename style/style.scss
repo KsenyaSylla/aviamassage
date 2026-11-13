@@ -1,16 +1,29 @@
+@use "sass:math";
+
 $maxWidth: 1366px;
+
 $backgroundColorDark: #2e393d;
 $backgroundColorMedium: #5f7f8a;
 $backgroundColorLight: #c7cbc2;
+$backgroundColorSand: #ccb78c;
+$backgroundColorCard: #eef2e9;
+$backgroundColorServices: #8d9a90;
+$backgroundColorComments: #b4bca4;
+$backgroundColorCommentItem: #dde3d7;
 $textColorDark: #060c12;
 $textColorLight: aliceblue;
+$textColorWhite: #fff;
 $lightGreen: #adffc0;
+$shadowColor: rgba(34, 60, 80, 0.2);
 $commonSpacing: 5em;
+$commonSpacingHalf: math.div($commonSpacing, 2);
+$commonSpacingThird: math.div($commonSpacing, 3);
+$commonSpacingFifth: math.div($commonSpacing, 5);
 
 @mixin cursorHover {
     cursor: pointer;
     text-decoration: underline;
-    text-decoration-color: $lightGreen;  
+    text-decoration-color: $lightGreen;
 }
 
 @mixin textStyleLight {
@@ -18,18 +31,9 @@ $commonSpacing: 5em;
     font-weight: bold;
 }
 
-@mixin fixPosition {
-    position: fixed;
-    z-index: 3;
-}
-
-@mixin buttonSize {
-    padding: 1em;
-}
-
 @mixin showAll {
-    padding: $commonSpacing/5;
-    background-color: #ccb78c;
+    padding: $commonSpacingFifth;
+    background-color: $backgroundColorSand;
     font-size: large;
     border: none;
     align-self: center;
@@ -47,8 +51,7 @@ $commonSpacing: 5em;
     width: 100%;
     padding: 0;
     margin: 0 auto;
-} 
-
+}
 
 .header {
     background-color: $backgroundColorDark;
@@ -56,6 +59,7 @@ $commonSpacing: 5em;
     top: 0;
     width: 100%;
     z-index: 5;
+
     .navbar {
         position: relative;
         display: flex;
@@ -63,7 +67,8 @@ $commonSpacing: 5em;
         justify-content: space-between;
         padding: 2em;
         color: $backgroundColorLight;
-        &__burger{
+
+        &__burger {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -75,31 +80,38 @@ $commonSpacing: 5em;
             border: none;
             color: $textColorLight;
             cursor: pointer;
+
             &:focus-visible {
                 outline: 2px solid $lightGreen;
                 outline-offset: 4px;
             }
-            &--icon{
+
+            &--icon {
                 display: block;
                 line-height: 0;
             }
+
             &--icon_close {
                 display: none;
             }
+
             &[aria-expanded="true"] {
                 .navbar__burger--icon_open {
                     display: none;
                 }
+
                 .navbar__burger--icon_close {
                     display: block;
                 }
             }
         }
+
         &__heading {
             flex: 1;
-            color: white;
+            color: $textColorWhite;
             text-align: center;
         }
+
         &__list {
             position: absolute;
             top: 100%;
@@ -113,16 +125,20 @@ $commonSpacing: 5em;
             justify-content: space-around;
             padding-top: 0.5em;
         }
+
         &__list--open {
             display: flex;
         }
-        .list__item{
+
+        .list__item {
             padding: 1em;
         }
-        .list__link{
+
+        .list__link {
             @include textStyleLight;
             text-decoration: none;
-            &:hover{
+
+            &:hover {
                 @include cursorHover;
             }
         }
@@ -131,208 +147,233 @@ $commonSpacing: 5em;
 
 main {
     background-color: $backgroundColorDark;
+
     .about {
         background-color: $backgroundColorDark;
         @include textStyleLight;
-        &__wrapper{
+
+        &__wrapper {
             position: relative;
-            width: 100%
+            width: 100%;
         }
+
         &__heading {
             text-align: center;
         }
+
         &__text {
             text-align: left;
         }
-        &__img{
+
+        &__img {
             display: flex;
             justify-content: center;
-            & img{
+
+            & img {
                 width: 100%;
-            }            
+            }
         }
-        &__info{
+
+        &__info {
             text-align: center;
-            padding: $commonSpacing/2;
-            margin: $commonSpacing/2;
-            background-color: #eef2e9;
-            box-shadow: 0px 0px 10px 4px rgba(34, 60, 80, 0.2);
+            padding: $commonSpacingHalf;
+            margin: $commonSpacingHalf;
+            background-color: $backgroundColorCard;
+            box-shadow: 0 0 10px 4px $shadowColor;
             color: $textColorDark;
-            //position: absolute;
-            //top: $commonSpacing;
         }
     }
+
     .services {
-        background-color: #8d9a90;
-        padding-bottom: $commonSpacing/2;
-        padding-top: $commonSpacing/2;
+        background-color: $backgroundColorServices;
+        padding-bottom: $commonSpacingHalf;
+        padding-top: $commonSpacingHalf;
+
         & h2 {
             color: $textColorLight;
             text-align: center;
         }
+
         .makeRowFrom3 {
-            padding-left: $commonSpacing/2;
-            padding-right: $commonSpacing/2;
-            padding-top: $commonSpacing/2;
+            padding-left: $commonSpacingHalf;
+            padding-right: $commonSpacingHalf;
+            padding-top: $commonSpacingHalf;
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
         }
-        &__item{
-            background-color: #eef2e9;
-            padding-left: $commonSpacing/2;
-            padding-right: $commonSpacing/2;
-            padding-top: $commonSpacing/2;
-            margin-bottom: $commonSpacing/2;
+
+        &__item {
+            background-color: $backgroundColorCard;
+            padding-left: $commonSpacingHalf;
+            padding-right: $commonSpacingHalf;
+            padding-top: $commonSpacingHalf;
+            margin-bottom: $commonSpacingHalf;
             width: $commonSpacing*4;
             height: $commonSpacing*5;
-            -webkit-box-shadow: 0px 0px 10px 4px rgba(34, 60, 80, 0.2);
-            -moz-box-shadow: 0px 0px 10px 4px rgba(34, 60, 80, 0.2);
-            box-shadow: 0px 0px 10px 4px rgba(34, 60, 80, 0.2);
-            .priseSym{
+            box-shadow: 0 0 10px 4px $shadowColor;
+
+            .priseSym {
                 text-align: center;
                 padding: 1em;
-                //border: 1px, solid, #648769;
             }
         }
-        &__showAll {
-            @include showAll;
-            &:hover {
-                @include cursorHover;
-            }
-        }
+
         .putInCenter {
             display: flex;
             flex-direction: column;
         }
-        
     }
 }
+
 .comments {
-    background-color: #b4bca4;
-    padding-top: $commonSpacing/2;
+    background-color: $backgroundColorComments;
+    padding-top: $commonSpacingHalf;
     text-align: center;
+
     &__wrapper {
-        padding-top: $commonSpacing/2;
-        padding-bottom: $commonSpacing/2;
+        padding-top: $commonSpacingHalf;
+        padding-bottom: $commonSpacingHalf;
         display: flex;
         flex-direction: column;
     }
-    &__wrapper--forButton{
-        padding-bottom: $commonSpacing/2;
+
+    &__wrapper--forButton {
+        padding-bottom: $commonSpacingHalf;
         display: flex;
         flex-direction: column;
     }
-    
+
     &__item {
-        background-color: #dde3d7;
-        padding: $commonSpacing/3;
+        background-color: $backgroundColorCommentItem;
+        padding: $commonSpacingThird;
         margin-bottom: 1em;
         margin-left: 1em;
         margin-right: 1em;
-        &--text{
+
+        &--text {
             margin-bottom: 1em;
             text-align: left;
         }
-        &--name{
+
+        &--name {
             font-weight: bold;
             margin-bottom: 1em;
             text-align: left;
         }
-        &--date{
+
+        &--date {
             text-align: center;
             font-style: italic;
         }
     }
-    &__showAll{
+
+    &__showAll {
         @include showAll;
         display: flex;
         justify-self: center;
     }
 }
+
 .contraindications {
-        background-color: $backgroundColorDark;
-        padding: $commonSpacing/2;
-        &__heading {
-            text-align: center;
-        }
-        &__info{
-            text-align: left;
-            padding: $commonSpacing/2;
-            background-color: #eef2e9;
-            box-shadow: 0px 0px 10px 4px rgba(34, 60, 80, 0.2);
-            color: $textColorDark;
-            //position: absolute;
-            //top: $commonSpacing;
-        }
+    background-color: $backgroundColorDark;
+    padding: $commonSpacingHalf;
+
+    &__heading {
+        text-align: center;
     }
 
+    &__info {
+        text-align: left;
+        padding: $commonSpacingHalf;
+        background-color: $backgroundColorCard;
+        box-shadow: 0 0 10px 4px $shadowColor;
+        color: $textColorDark;
+    }
+}
+
 .footer {
-    color: #eef2e9;
-    &__contacts{
+    color: $backgroundColorCard;
+
+    &__contacts {
         background-color: $backgroundColorMedium;
-        padding-top: $commonSpacing/2;
-        padding-bottom: $commonSpacing/2;
-        .contacts__header{
+        padding-top: $commonSpacingHalf;
+        padding-bottom: $commonSpacingHalf;
+
+        .contacts__header {
             text-align: center;
             padding-bottom: 2em;
         }
-        .contacts__list{
+
+        .contacts__list {
             display: flex;
             list-style-type: none;
             justify-content: space-around;
             flex-wrap: wrap;
-            padding-bottom: $commonSpacing/2;
+            padding-bottom: $commonSpacingHalf;
             font-size: larger;
-            & a{
+
+            & a {
                 text-decoration: none;
                 color: $textColorLight;
+
                 &:hover {
                     @include cursorHover;
                 }
             }
-            &--item{
+
+            &--item {
                 padding-left: 2em;
                 padding-right: 2em;
             }
-        } 
+        }
     }
-    &__social{
+
+    &__social {
         background-color: $backgroundColorDark;
-        padding-top: $commonSpacing/2;
-        padding-bottom: $commonSpacing/2;
-        .social__list{
+        padding-top: $commonSpacingHalf;
+        padding-bottom: $commonSpacingHalf;
+
+        .social__list {
             list-style-type: none;
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
+
             &:hover {
                 @include cursorHover;
             }
         }
     }
-    &__rights{
+
+    &__rights {
         margin: auto;
-        .authorsOfIcons{
+
+        .authorsOfIcons {
             list-style-type: none;
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
-            & a{
+
+            & a {
                 text-decoration: none;
                 color: $textColorLight;
+
                 &:hover {
                     @include cursorHover;
                 }
             }
-            &__icon:not(:last-child){
+
+            &__icon:not(:last-child) {
                 padding-right: $commonSpacing;
             }
         }
-        hr{
-            margin-top: $commonSpacing/2;
-            margin-bottom: $commonSpacing/2;
+
+        hr {
+            margin-top: $commonSpacingHalf;
+            margin-bottom: $commonSpacingHalf;
         }
+
         .authorOfSite {
             text-align: center;
         }
