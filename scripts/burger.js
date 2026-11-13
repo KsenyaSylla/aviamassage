@@ -1,23 +1,60 @@
 export function burger() {
-    const burgerMenu = document.querySelector(".navbar__burger");
-    const burgerList = document.querySelector(".navbar__list");
-    const navbarTitle = document.querySelector(".navbar__title");
-    const menuTitle = document.createElement("h2");
-    burgerMenu.addEventListener("click", () => {
-        let text = event.target.innerHTML;
-        if (burgerList.style.display == "flex") {
-            burgerList.style.display = "none";
-            burgerMenu.firstElementChild.style.display = "flex";
-            if (text.length > 30) {
-                menuTitle.textContent = "";
-            } else {
-                menuTitle.textContent = text;
-                navbarTitle.insertAdjacentElement("afterbegin", menuTitle);
-            }
-        } else {
-            burgerList.style.display = "flex";
-            burgerMenu.firstElementChild.style.display = "none";
-            menuTitle.remove();
+    const button = document.querySelector(".navbar__burger");
+    const list = document.getElementById("navbar-menu");
+
+    if (!button || !list) {
+        return;
+    }
+
+    const firstLink = list.querySelector(".list__link");
+
+    const isOpen = () => button.getAttribute("aria-expanded") === "true";
+
+    const setOpen = (open, focusTarget) => {
+        button.setAttribute("aria-expanded", String(open));
+        button.setAttribute("aria-label", open ? "Закрыть меню" : "Открыть меню");
+        list.classList.toggle("navbar__list--open", open);
+
+        if (open && focusTarget === "menu" && firstLink) {
+            firstLink.focus();
+        }
+
+        if (!open && focusTarget === "button") {
+            button.focus();
+        }
+    };
+
+    button.addEventListener("click", () => {
+        setOpen(!isOpen(), isOpen() ? "button" : "menu");
+    });
+
+    list.addEventListener("click", (event) => {
+        if (event.target.closest("a")) {
+            setOpen(false, "button");
+        }
+    });
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape" && isOpen()) {
+            setOpen(false, "button");
+        }
+    });
+
+    document.addEventListener("click", (event) => {
+        if (!isOpen()) {
+            return;
+        }
+
+        if (button.contains(event.target) || list.contains(event.target)) {
+            return;
+        }
+
+        setOpen(false);
+    });
+
+    window.addEventListener("resize", () => {
+        if (isOpen()) {
+            setOpen(false);
         }
     });
 }

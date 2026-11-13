@@ -35,11 +35,6 @@ $commonSpacing: 5em;
     align-self: center;
 }
 
-@mixin fixedToCenter{
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
-}
 * {
     margin: 0;
     padding: 0;
@@ -62,39 +57,64 @@ $commonSpacing: 5em;
     width: 100%;
     z-index: 5;
     .navbar {
+        position: relative;
         display: flex;
         align-items: center;
         justify-content: space-between;
         padding: 2em;
-        color:#c7cbc2;
+        color: $backgroundColorLight;
         &__burger{
-            color: $textColorLight;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 44px;
+            min-height: 44px;
             margin-right: 2em;
-            &:hover{
-                @include cursorHover;
+            padding: 0;
+            background: none;
+            border: none;
+            color: $textColorLight;
+            cursor: pointer;
+            &:focus-visible {
+                outline: 2px solid $lightGreen;
+                outline-offset: 4px;
             }
             &--icon{
                 display: block;
+                line-height: 0;
+            }
+            &--icon_close {
+                display: none;
+            }
+            &[aria-expanded="true"] {
+                .navbar__burger--icon_open {
+                    display: none;
+                }
+                .navbar__burger--icon_close {
+                    display: block;
+                }
             }
         }
-        .hide{
-            display: none;
-        }
         &__heading {
+            flex: 1;
             color: white;
             text-align: center;
         }
         &__list {
             position: absolute;
-            max-width: $maxWidth;
+            top: 100%;
+            left: 0;
+            z-index: 4;
+            width: 100%;
             background-color: $backgroundColorMedium;
             list-style-type: none;
-            width: 100%;
             display: none;
             flex-wrap: wrap;
             justify-content: space-around;
             padding-top: 0.5em;
-            @include fixedToCenter;
+        }
+        &__list--open {
+            display: flex;
         }
         .list__item{
             padding: 1em;
