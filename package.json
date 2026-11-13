@@ -5,7 +5,7 @@
   "type": "module",
   "description": "Сайт массажиста Надежды Смирновой",
   "scripts": {
-    "dev": "concurrently --kill-others --names sass,browser-sync \"npm:serve\" \"npm:sass:watch\"",
+    "dev": "concurrently --kill-others --names browser-sync,sass \"npm:serve\" \"npm:sass:watch\"",
     "sass:build": "sass style/style.scss style/style.css",
     "sass:watch": "sass --watch style/style.scss style/style.css",
     "serve": "browser-sync start --server --files \"index.html, style/style.css, scripts/*.js, data/*.js\"",
