@@ -1,5 +1,3 @@
-@use "sass:math";
-
 $max-width: 1366px;
 
 $background-color-dark: #2e393d;
@@ -15,10 +13,11 @@ $text-color-light: aliceblue;
 $text-color-white: #fff;
 $light-green: #adffc0;
 $shadow-color: rgb(34 60 80 / 20%);
-$common-spacing: 5em;
-$common-spacing-half: math.div($common-spacing, 2);
-$common-spacing-third: math.div($common-spacing, 3);
-$common-spacing-fifth: math.div($common-spacing, 5);
+
+$spacing-xs: clamp(0.75rem, 2vw, 1rem);
+$spacing-sm: clamp(1rem, 3vw, 1.6667rem);
+$spacing-md: clamp(1.5rem, 5vw, 2.5rem);
+$spacing-lg: clamp(2.5rem, 8vw, 5rem);
 
 @mixin cursor-hover {
     cursor: pointer;
@@ -32,7 +31,7 @@ $common-spacing-fifth: math.div($common-spacing, 5);
 }
 
 @mixin show-all {
-    padding: $common-spacing-fifth;
+    padding: $spacing-xs;
     background-color: $background-color-sand;
     font-size: large;
     border: none;
@@ -46,10 +45,33 @@ $common-spacing-fifth: math.div($common-spacing, 5);
     font-family: Verdana, sans-serif;
 }
 
+body {
+    line-height: 1.5;
+    overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+}
+
+h3 {
+    font-size: clamp(1.1rem, 3vw, 1.3rem);
+}
+
+:where(#about, #services, #comments, #contraindications, #contacts) {
+    scroll-margin-top: clamp(5rem, 12vw, 7rem);
+}
+
 .container {
     max-width: $max-width;
     width: 100%;
-    padding: 0;
+    padding: 0 clamp(1rem, 4vw, 2rem);
     margin: 0 auto;
 }
 
@@ -60,21 +82,26 @@ $common-spacing-fifth: math.div($common-spacing, 5);
     width: 100%;
     z-index: 5;
 
+    .container {
+        padding: 0;
+    }
+
     .navbar {
         position: relative;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 2em;
+        padding: 1rem clamp(1rem, 4vw, 2rem);
         color: $background-color-light;
 
         &__burger {
             display: flex;
             align-items: center;
             justify-content: center;
+            flex: none;
             min-width: 44px;
             min-height: 44px;
-            margin-right: 2em;
+            margin-right: 0.75rem;
             padding: 0;
             background: none;
             border: none;
@@ -112,6 +139,10 @@ $common-spacing-fifth: math.div($common-spacing, 5);
             text-align: center;
         }
 
+        &__heading h1 {
+            font-size: clamp(1.05rem, 3.5vw, 1.5rem);
+        }
+
         &__list {
             position: absolute;
             top: 100%;
@@ -121,8 +152,7 @@ $common-spacing-fifth: math.div($common-spacing, 5);
             background-color: $background-color-medium;
             list-style-type: none;
             display: none;
-            flex-wrap: wrap;
-            justify-content: space-around;
+            flex-direction: column;
             padding-top: 0.5em;
         }
 
@@ -131,12 +161,15 @@ $common-spacing-fifth: math.div($common-spacing, 5);
         }
 
         .list__item {
-            padding: 1em;
+            padding: 0.85em 1em;
+            text-align: center;
+            border-top: 1px solid rgb(255 255 255 / 15%);
         }
 
         .list__link {
             @include text-style-light;
 
+            display: block;
             text-decoration: none;
 
             &:hover {
@@ -156,6 +189,8 @@ main {
 
         &__wrapper {
             position: relative;
+            display: flex;
+            flex-direction: column;
             width: 100%;
         }
 
@@ -170,16 +205,21 @@ main {
         &__img {
             display: flex;
             justify-content: center;
+            margin: 0;
 
             & img {
+                display: block;
                 width: 100%;
+                max-width: 100%;
+                height: auto;
+                object-fit: cover;
             }
         }
 
         &__info {
             text-align: center;
-            padding: $common-spacing-half;
-            margin: $common-spacing-half;
+            padding: $spacing-md;
+            margin: $spacing-md 0;
             background-color: $background-color-card;
             box-shadow: 0 0 10px 4px $shadow-color;
             color: $text-color-dark;
@@ -188,8 +228,8 @@ main {
 
     .services {
         background-color: $background-color-services;
-        padding-bottom: $common-spacing-half;
-        padding-top: $common-spacing-half;
+        padding-bottom: $spacing-md;
+        padding-top: $spacing-md;
 
         & h2 {
             color: $text-color-light;
@@ -197,27 +237,29 @@ main {
         }
 
         .makeRowFrom3 {
-            padding-left: $common-spacing-half;
-            padding-right: $common-spacing-half;
-            padding-top: $common-spacing-half;
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
+            padding-top: $spacing-md;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+            gap: $spacing-md;
         }
 
         &__item {
+            display: flex;
+            flex-direction: column;
             background-color: $background-color-card;
-            padding-left: $common-spacing-half;
-            padding-right: $common-spacing-half;
-            padding-top: $common-spacing-half;
-            margin-bottom: $common-spacing-half;
-            width: $common-spacing * 4;
-            height: $common-spacing * 5;
+            padding: $spacing-sm;
             box-shadow: 0 0 10px 4px $shadow-color;
 
+            .services__text--block {
+                display: flex;
+                flex: 1;
+                flex-direction: column;
+            }
+
             .priseSym {
+                margin-top: auto;
                 text-align: center;
-                padding: 1em;
+                padding: $spacing-xs 0 0;
             }
         }
 
@@ -230,32 +272,35 @@ main {
 
 .comments {
     background-color: $background-color-comments;
-    padding-top: $common-spacing-half;
+    padding-top: $spacing-md;
     text-align: center;
 
     &__wrapper {
-        padding-top: $common-spacing-half;
-        padding-bottom: $common-spacing-half;
+        width: 100%;
+        max-width: 60rem;
+        margin: 0 auto;
+        padding-top: $spacing-md;
+        padding-bottom: $spacing-md;
         display: flex;
         flex-direction: column;
     }
 
     &__wrapper--forButton {
-        padding-bottom: $common-spacing-half;
         display: flex;
         flex-direction: column;
+        align-items: center;
+        padding-bottom: $spacing-md;
     }
 
     &__item {
         background-color: $background-color-comment-item;
-        padding: $common-spacing-third;
+        padding: $spacing-sm;
         margin-bottom: 1em;
-        margin-left: 1em;
-        margin-right: 1em;
 
         &--text {
             margin-bottom: 1em;
             text-align: left;
+            white-space: pre-line;
         }
 
         &--name {
@@ -270,17 +315,18 @@ main {
         }
     }
 
-    &__show-all {
+    &__showAll {
         @include show-all;
 
         display: flex;
-        justify-self: center;
+        justify-content: center;
+        width: 100%;
     }
 }
 
 .contraindications {
     background-color: $background-color-dark;
-    padding: $common-spacing-half;
+    padding: $spacing-md 0;
 
     &__heading {
         text-align: center;
@@ -288,10 +334,27 @@ main {
 
     &__info {
         text-align: left;
-        padding: $common-spacing-half;
+        padding: $spacing-md;
         background-color: $background-color-card;
         box-shadow: 0 0 10px 4px $shadow-color;
         color: $text-color-dark;
+    }
+
+    &__text {
+        margin-bottom: 1em;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__list {
+        margin: 0 0 1em 1.5em;
+        padding-left: 1.25em;
+
+        li {
+            margin-bottom: 0.4em;
+        }
     }
 }
 
@@ -300,8 +363,8 @@ main {
 
     &__contacts {
         background-color: $background-color-medium;
-        padding-top: $common-spacing-half;
-        padding-bottom: $common-spacing-half;
+        padding-top: $spacing-md;
+        padding-bottom: $spacing-md;
 
         .contacts__header {
             text-align: center;
@@ -310,10 +373,10 @@ main {
 
         .contacts__list {
             display: flex;
+            flex-direction: column;
+            gap: 0.5em;
             list-style-type: none;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            padding-bottom: $common-spacing-half;
+            padding-bottom: $spacing-md;
             font-size: larger;
 
             & a {
@@ -326,26 +389,28 @@ main {
             }
 
             &--item {
-                padding-left: 2em;
-                padding-right: 2em;
+                padding: 0.25em 0;
             }
         }
     }
 
     &__social {
         background-color: $background-color-dark;
-        padding-top: $common-spacing-half;
-        padding-bottom: $common-spacing-half;
+        padding-top: $spacing-md;
+        padding-bottom: $spacing-md;
 
         .social__list {
             list-style-type: none;
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
+            gap: $spacing-xs;
+        }
 
-            &:hover {
-                @include cursor-hover;
-            }
+        .social__list svg {
+            display: block;
+            width: clamp(44px, 10vw, 48px);
+            height: auto;
         }
     }
 
@@ -357,6 +422,8 @@ main {
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
+            gap: $spacing-xs;
+            text-align: center;
 
             & a {
                 text-decoration: none;
@@ -368,17 +435,101 @@ main {
             }
 
             &__icon:not(:last-child) {
-                padding-right: $common-spacing;
+                padding-right: $spacing-lg;
             }
         }
 
         hr {
-            margin-top: $common-spacing-half;
-            margin-bottom: $common-spacing-half;
+            margin-top: $spacing-md;
+            margin-bottom: $spacing-md;
         }
 
         .authorOfSite {
             text-align: center;
         }
+    }
+}
+
+.contacts__cart {
+    width: 100%;
+
+    iframe {
+        display: block;
+        width: 100%;
+        height: clamp(240px, 45vw, 450px);
+        border: 0;
+    }
+}
+
+@media (width >= 480px) {
+    .header .navbar {
+        padding-block: 1.25rem;
+    }
+
+    .comments__showAll {
+        width: auto;
+        min-width: 16rem;
+    }
+}
+
+@media (width >= 768px) {
+    .header .navbar {
+        padding-block: 1.5rem;
+    }
+
+    .header .navbar__list {
+        flex-direction: row;
+        justify-content: space-around;
+        padding-top: 0;
+    }
+
+    .header .navbar .list__item {
+        flex: 1;
+        border-top: none;
+    }
+
+    .footer__contacts .contacts__list {
+        flex-flow: row wrap;
+        justify-content: space-around;
+        gap: 0;
+    }
+
+    .footer__contacts .contacts__list--item {
+        padding: 0 1em;
+    }
+
+    .comments__item {
+        margin-bottom: 1.25em;
+    }
+}
+
+@media (width >= 900px) {
+    main .about__wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: stretch;
+    }
+
+    main .about__img img {
+        height: 100%;
+        object-fit: cover;
+    }
+
+    main .about__info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+@media (width >= 1024px) {
+    .header .navbar {
+        padding-block: 2rem;
+    }
+}
+
+@media (width >= 1366px) {
+    .container {
+        padding: 0 2rem;
     }
 }
