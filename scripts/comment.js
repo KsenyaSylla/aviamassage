@@ -1,22 +1,21 @@
-export function comment(commentsData, container, startFrom) {
+export function comment(commentsData, container, shownCount) {
     const template = document.getElementById("comment-card");
 
     if (!template) {
-        return startFrom;
+        return;
     }
 
-    const finish = startFrom + 3;
-    const comments = commentsData.splice(startFrom, finish);
+    const fragment = document.createDocumentFragment();
 
-    comments.forEach((comment) => {
+    commentsData.slice(0, shownCount).forEach((comment) => {
         const card = template.content.cloneNode(true);
 
         card.querySelector('[data-field="name"]').textContent = comment.name;
         card.querySelector('[data-field="text"]').textContent = comment.text;
         card.querySelector('[data-field="date"]').textContent = comment.date;
 
-        container.appendChild(card);
+        fragment.appendChild(card);
     });
 
-    return finish;
+    container.replaceChildren(fragment);
 }

@@ -321,6 +321,10 @@ main {
         display: flex;
         justify-content: center;
         width: 100%;
+
+        &[hidden] {
+            display: none;
+        }
     }
 }
 
@@ -380,6 +384,8 @@ main {
             font-size: larger;
 
             & a {
+                display: inline-block;
+                padding: 0.5em 0;
                 text-decoration: none;
                 color: $text-color-light;
 

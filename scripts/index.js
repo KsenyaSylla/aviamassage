@@ -5,23 +5,28 @@ import { comment } from "./comment.js";
 import { services } from "./service.js";
 import { servicesData } from "../data/servicesData.js";
 
-function addComments() {
-    let startFrom = buttonComments.getAttribute("data-start-from");
-    comment(commentsData, commentsWrapper, startFrom);
-    startFrom += 3;
-    return startFrom;
-}
+const PAGE_SIZE = 3;
 
 const buttonComments = document.querySelector(".comments__showAll");
-buttonComments.addEventListener("click", addComments);
-
-const services__wrapper = document.querySelector(".makeRowFrom3");
-services(servicesData, services__wrapper);
-
 const commentsWrapper = document.querySelector(".comments__wrapper");
-comment(commentsData, commentsWrapper, 0);
+const servicesWrapper = document.querySelector(".makeRowFrom3");
 
-//обработчик на бургер-меню
+let shownCount = PAGE_SIZE;
+
+function renderComments() {
+    comment(commentsData, commentsWrapper, shownCount);
+    buttonComments.hidden = shownCount >= commentsData.length;
+}
+
+buttonComments.addEventListener("click", () => {
+    shownCount = Math.min(shownCount + PAGE_SIZE, commentsData.length);
+    renderComments();
+});
+
+services(servicesData, servicesWrapper);
+renderComments();
+
+// обработчик на бургер-меню
 burger();
 
 // напишем сегодняшний год в копирайте

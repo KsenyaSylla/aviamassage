@@ -250,6 +250,9 @@ main .services .putInCenter {
   justify-content: center;
   width: 100%;
 }
+.comments__showAll[hidden] {
+  display: none;
+}
 
 .contraindications {
   background-color: #2e393d;
@@ -300,6 +303,8 @@ main .services .putInCenter {
   font-size: larger;
 }
 .footer__contacts .contacts__list a {
+  display: inline-block;
+  padding: 0.5em 0;
   text-decoration: none;
   color: aliceblue;
 }
